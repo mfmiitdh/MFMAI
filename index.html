@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IIT Dharwad Symposium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@400;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "on-primary-fixed-variant": "#153ea3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#dce1ff",
+                    "on-secondary-container": "#745c00",
+                    "on-tertiary-fixed": "#00174a",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary-fixed-dim": "#b3c5ff",
+                    "on-primary-fixed": "#00164e",
+                    "on-secondary-fixed-variant": "#574500",
+                    "outline-variant": "#c4c5d5",
+                    "surface-dim": "#d9dadb",
+                    "secondary-container": "#fed65b",
+                    "inverse-on-surface": "#f0f1f2",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed": "#dbe1ff",
+                    "surface-container-high": "#e7e8e9",
+                    "surface": "#f8f9fa",
+                    "primary": "#002068",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "on-error": "#ffffff",
+                    "secondary": "#735c00",
+                    "on-primary-container": "#8aa4ff",
+                    "on-tertiary-container": "#90a6ea",
+                    "surface-container": "#edeeef",
+                    "inverse-primary": "#b5c4ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffe088",
+                    "on-surface-variant": "#444653",
+                    "surface-tint": "#3557bc",
+                    "primary-container": "#003399",
+                    "tertiary": "#05235f",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#2d4481",
+                    "on-background": "#191c1d",
+                    "tertiary-container": "#223a76",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-highest": "#e1e3e4",
+                    "background": "#f8f9fa",
+                    "outline": "#747684",
+                    "on-primary": "#ffffff"
+                },
+                borderRadius: {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "9999px"
+                },
+                spacing: {
+                    "base": "8px",
+                    "section-padding-mobile": "40px",
+                    "ticker-height": "48px",
+                    "container-max-width": "1200px",
+                    "section-padding-desktop": "80px",
+                    "gutter": "24px"
+                },
+                fontFamily: {
+                    "headline-lg-mobile": ["Manrope"],
+                    "subheading": ["Manrope"],
+                    "body-lg": ["Work Sans"],
+                    "body-md": ["Work Sans"],
+                    "headline-lg": ["Manrope"],
+                    "headline-xl": ["Manrope"],
+                    "label-caps": ["JetBrains Mono"],
+                    "news-ticker": ["Work Sans"]
+                },
+                fontSize: {
+                    "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                    "subheading": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                    "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                    "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                    "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                    "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                    "label-caps": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+                    "news-ticker": ["15px", { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "600" }]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .bg-grid-pattern {
+        background-image: linear-gradient(to right, rgba(0, 32, 104, 0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(0, 32, 104, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+    .ticker-track {
+        display: inline-block;
+        white-space: nowrap;
+        animation: tickerScroll 25s linear infinite;
+        padding-left: 100%;
+    }
+    @keyframes tickerScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+    .sponsor-marquee-track {
+        display: flex;
+        width: max-content;
+        animation: sponsorScroll 30s linear infinite;
+    }
+    .sponsor-marquee:hover .sponsor-marquee-track {
+        animation-play-state: paused;
+    }
+    @keyframes sponsorScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .page { display: none; }
+    .page.active { display: block; }
+    #mobileMenu { display: none; }
+    #mobileMenu.open { display: flex; }
+    .speaker-bio-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[120px]">
+
+<!-- ========== TopAppBar ========== -->
+<header class="bg-surface border-b border-outline-variant fixed w-full top-0 z-50 h-[72px] flex items-center">
+  <div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max-width mx-auto">
+    <button onclick="goTo('home')" class="text-subheading font-subheading font-bold text-primary text-left">
+      ANRF National Symposium
+    </button>
+
+    <nav class="hidden md:flex gap-6 items-center" id="desktopNav">
+      <a data-nav="home" href="#" onclick="return handleNav(event,'home')" class="font-label-caps text-label-caps py-2 transition-colors">Home</a>
+      <a data-nav="speakers" href="#" onclick="return handleNav(event,'speakers')" class="font-label-caps text-label-caps py-2 transition-colors">Speakers</a>
+      <a data-nav="registration" href="#" onclick="return handleNav(event,'registration')" class="font-label-caps text-label-caps py-2 transition-colors">Registration</a>
+      <a data-nav="about" href="#" onclick="return handleNav(event,'about')" class="font-label-caps text-label-caps py-2 transition-colors">About</a>
+      <a data-nav="gallery" href="#" onclick="return handleNav(event,'gallery')" class="font-label-caps text-label-caps py-2 transition-colors">Gallery</a>
+      <a data-nav="sponsors" href="#" onclick="return handleNav(event,'sponsors')" class="font-label-caps text-label-caps py-2 transition-colors">Sponsors</a>
+    </nav>
+
+    <button onclick="goTo('registration')" class="hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">
+      Register Now
+    </button>
+
+    <button class="md:hidden text-primary" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <span class="material-symbols-outlined" id="mobileMenuIcon">menu</span>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden flex-col absolute top-[72px] left-0 right-0 bg-surface border-b border-outline-variant shadow-lg p-6 gap-2">
+    <a data-nav="home" href="#" onclick="closeMobileMenu(); return handleNav(event,'home')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Home</a>
+    <a data-nav="speakers" href="#" onclick="closeMobileMenu(); return handleNav(event,'speakers')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Speakers</a>
+    <a data-nav="registration" href="#" onclick="closeMobileMenu(); return handleNav(event,'registration')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Registration</a>
+    <a data-nav="about" href="#" onclick="closeMobileMenu(); return handleNav(event,'about')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">About</a>
+    <a data-nav="gallery" href="#" onclick="closeMobileMenu(); return handleNav(event,'gallery')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Gallery</a>
+    <a data-nav="sponsors" href="#" onclick="closeMobileMenu(); return handleNav(event,'sponsors')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Sponsors</a>
+    <button onclick="closeMobileMenu(); goTo('registration')" class="mt-2 bg-primary text-on-primary font-label-caps text-label-caps px-4 py-3 rounded shadow-sm text-center">Register Now</button>
+  </div>
+</header>
+
+<!-- ========== FlashNewsTicker ========== -->
+<div class="bg-primary fixed top-[72px] w-full z-40 flex items-center overflow-hidden h-ticker-height cursor-pointer" onclick="goTo('registration')">
+  <div class="ticker-track text-on-primary font-news-ticker text-news-ticker flex items-center">
+    <span class="font-label-caps text-label-caps text-secondary-fixed mr-2">UPDATE:</span> Abstract submission deadline extended to November 25, 2026. Platinum Sponsorship slots now open!
+  </div>
+</div>
+
+<main class="flex-grow">
+
+<!-- ========================= HOME PAGE ========================= -->
+<section id="page-home" class="page active">
+  <!-- Hero Section -->
+  <section class="py-section-padding-desktop px-gutter relative overflow-hidden bg-surface-container-lowest border-b border-outline-variant">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#002068 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <div class="max-w-container-max-width mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-6 font-label-caps text-label-caps">
+          <span class="material-symbols-outlined text-sm">calendar_month</span>
+          December 3-4, 2026
+        </div>
+        <h1 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">
+          ANRF SYMPOSIUM ON <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-surface-tint">MULTIPHASE FLOW MODELING</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+          Microfluidics, CFD, Advanced Materials and AI-Driven Simulation. Bridging the gap between fundamental science and industrial innovation.
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <button onclick="goTo('registration')" class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps hover:shadow-lg transition-shadow">Register Now</button>
+          <button onclick="openBrochure()" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Download Brochure</button>
+        </div>
+      </div>
+      <div class="relative h-[400px] rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://drive.google.com/thumbnail?id=15EBb3pD8h-DNxfU1IbILY3K581qSU8g1&sz=w2000')"></div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section class="py-section-padding-desktop px-gutter bg-surface">
+    <div class="max-w-container-max-width mx-auto grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-4 border-l-4 border-secondary pl-4">About the Symposium</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+          Multiphase flow, microfluidics, advanced materials, and CFD sit at the heart of process, energy, biomedical, and electronics engineering. MFM-AI 2026 brings together CFD modelers, experimentalists, materials scientists, and data scientists on a single national platform.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+            <span class="font-body-md text-body-md text-on-surface">Hands-on ANSYS and COMSOL sessions</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+            <span class="font-body-md text-body-md text-on-surface">Interaction with renowned professors and industry speakers</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+            <span class="font-body-md text-body-md text-on-surface">Certification from IIT Dharwad</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <button onclick="goTo('speakers')" class="font-label-caps text-label-caps font-bold text-primary flex items-center gap-1 hover:underline">
+            View All Keynote Speakers <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 gap-6">
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">water_drop</span>
+          <h3 class="font-subheading text-subheading text-on-surface mb-2">Multiphase Flows</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">VOF, Level-Set, Eulerian-Eulerian, Lattice-Boltzmann.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">science</span>
+          <h3 class="font-subheading text-subheading text-on-surface mb-2">Microfluidics</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Droplet &amp; digital microfluidics, lab-on-chip diagnostics.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">computer</span>
+          <h3 class="font-subheading text-subheading text-on-surface mb-2">CFD &amp; Multiphysics</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Reactive, thermal &amp; interfacial transport modeling.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">memory</span>
+          <h3 class="font-subheading text-subheading text-on-surface mb-2">AI/ML Simulation</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Surrogate modeling &amp; inverse design for advanced materials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsor Logo Marquee -->
+  <section class="py-10 px-gutter bg-surface-container-lowest border-b border-outline-variant">
+    <div class="max-w-container-max-width mx-auto overflow-hidden sponsor-marquee">
+      <div class="sponsor-marquee-track" id="sponsorMarqueeTrack"></div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="py-section-padding-desktop px-gutter bg-surface">
+    <div class="max-w-container-max-width mx-auto">
+      <div class="section-header text-center mb-12">
+        <span class="eyebrow font-label-caps text-label-caps text-secondary uppercase">Leadership</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary mt-2">Patron & Organizing Leadership</h2>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8" id="leadershipGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ========================= SPEAKERS PAGE ========================= -->
+<section id="page-speakers" class="page">
+  <section class="bg-surface-container-low py-section-padding-desktop px-gutter relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 32px 32px;"></div>
+    <div class="max-w-container-max-width mx-auto text-center relative z-10">
+      <h1 class="font-headline-xl text-headline-xl text-primary mb-4">Invited Speakers</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Distinguished experts sharing groundbreaking insights in Chemical Engineering, Computational Fluid Dynamics, and AI-driven materials research.
+      </p>
+    </div>
+  </section>
+  <section class="py-section-padding-desktop px-gutter">
+    <div class="max-w-container-max-width mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="speakersGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ========================= REGISTRATION PAGE ========================= -->
+<section id="page-registration" class="page">
+  <main class="max-w-container-max-width mx-auto px-gutter pb-section-padding-desktop mt-8">
+    <div class="mb-12">
+      <h1 class="font-headline-xl text-headline-xl text-primary mb-4">Registration</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Secure your attendance for the National Symposium on Multiphase Flow Modeling, Microfluidics, CFD, Advanced Materials and AI-Driven Simulation.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        <!-- Deadline Card -->
+        <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            <h3 class="font-subheading text-subheading text-primary">Important Date</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-2">Registration Deadline:</p>
+          <p class="font-subheading text-subheading text-on-surface font-bold text-error">November 25, 2026</p>
+        </div>
+        <!-- Fee Details Card -->
+        <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+            <h3 class="font-subheading text-subheading text-primary">Fee Structure</h3>
+          </div>
+          <div class="mb-4">
+            <p class="font-body-md text-body-md text-on-surface-variant">UG, PG student / Ph.D. faculty</p>
+            <p class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Rs. 1000/-</p>
+          </div>
+          <ul class="space-y-2 font-body-md text-body-md text-on-surface-variant text-sm border-t border-outline-variant/20 pt-4">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+              Includes registration kit &amp; certificate
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+              All-day refreshments (tea/snacks)
+            </li>
+          </ul>
+        </div>
+        <!-- Contact Card -->
+        <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-tertiary-container"></div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">contact_support</span>
+            <h3 class="font-subheading text-subheading text-primary">Contact Organizing Team</h3>
+          </div>
+          <div class="mb-5">
+            <p class="font-subheading text-body-lg font-bold text-on-surface">Prof. Somasekhara Goud Sontti</p>
+            <p class="font-body-md text-body-md text-on-surface-variant text-sm mb-2">Convenor, Assistant Professor</p>
+            <a class="flex items-center gap-2 text-primary hover:text-secondary transition-colors font-body-md text-sm mb-1" href="mailto:somasekhar.sonti@iitdh.ac.in">
+              <span class="material-symbols-outlined text-base">mail</span>
+              somasekhar.sonti@iitdh.ac.in
+            </a>
+            <p class="flex items-center gap-2 text-on-surface-variant font-body-md text-sm">
+              <span class="material-symbols-outlined text-base">call</span>
+              +91 9444424007
+            </p>
+          </div>
+          <div class="border-t border-outline-variant/20 pt-4">
+            <p class="font-subheading text-body-lg font-bold text-on-surface">Prof. Ravi Chandra Dutta</p>
+            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Co-Convenor, Assistant Professor</p>
+          </div>
+        </div>
+      </div>
+      <!-- Right Column: Registration Wizard -->
+      <div class="lg:col-span-8">
+        <div class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 shadow-[0_4px_24px_rgba(0,32,104,0.04)]" id="regFormWrap">
+
+          <!-- Step indicator -->
+          <div class="flex items-center gap-3 mb-6">
+            <div class="flex items-center gap-2" id="stepIndicator1">
+              <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-xs font-bold">1</div>
+              <span class="font-label-caps text-label-caps text-primary font-bold">Details</span>
+            </div>
+            <div class="flex-1 h-px bg-outline-variant"></div>
+            <div class="flex items-center gap-2" id="stepIndicator2">
+              <div class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-caps text-xs font-bold" id="stepDot2">2</div>
+              <span class="font-label-caps text-label-caps text-on-surface-variant" id="stepLabel2">Payment</span>
+            </div>
+          </div>
+
+          <!-- STEP 1: Participant Details -->
+          <form id="regStep1" class="space-y-6" onsubmit="return goToPaymentStep(event)">
+            <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2 border-b border-outline-variant/30 pb-4">Participant Application</h2>
+            <p class="font-body-md text-sm text-on-surface-variant -mt-4">You can register now and submit your abstract later — a poster abstract is optional.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="block font-label-caps text-label-caps text-on-surface-variant" for="fullName">Full Name *</label>
+                <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="fullName" name="fullName" required type="text"/>
+              </div>
+              <div class="space-y-2">
+                <label class="block font-label-caps text-label-caps text-on-surface-variant" for="email">Email Address *</label>
+                <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="email" name="email" required type="email"/>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="block font-label-caps text-label-caps text-on-surface-variant" for="affiliation">Institute / Affiliation *</label>
+                <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="affiliation" name="affiliation" required type="text"/>
+              </div>
+              <div class="space-y-2">
+                <label class="block font-label-caps text-label-caps text-on-surface-variant" for="participantType">Participant Category *</label>
+                <select class="w-full bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none cursor-pointer" id="participantType" name="participantType" required>
+                  <option disabled selected value="">Select Category</option>
+                  <option value="ug">UG Student</option>
+                  <option value="pg">PG Student</option>
+                  <option value="phd">Ph.D. Scholar</option>
+                  <option value="faculty">Faculty Member</option>
+                  <option value="industry">Industry Professional</option>
+                </select>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="block font-label-caps text-label-caps text-on-surface-variant" for="contactNumber">Contact Number</label>
+              <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="contactNumber" name="contactNumber" type="tel" placeholder="+91 XXXXX XXXXX"/>
+            </div>
+            <div class="pt-6">
+              <button class="w-full bg-primary text-on-primary py-4 px-6 rounded font-subheading text-body-lg font-bold hover:bg-primary-container hover:shadow-[0_4px_12px_rgba(0,32,104,0.15)] transition-all flex justify-center items-center gap-2" type="submit">
+                Proceed to Payment (Rs. 1000/-)
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- STEP 2: Payment + Optional Uploads -->
+          <form id="regStep2" class="space-y-6 hidden" onsubmit="return submitRegistration(event)">
+            <div class="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-2">
+              <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Complete Payment</h2>
+              <button type="button" onclick="backToDetailsStep()" class="font-label-caps text-label-caps text-primary flex items-center gap-1 hover:underline">
+                <span class="material-symbols-outlined text-base">arrow_back</span> Edit details
+              </button>
+            </div>
+
+            <div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-center">
+              <img id="paymentQR" class="w-40 h-40 rounded-lg border border-outline-variant bg-white" src="" alt="UPI QR Code"/>
+              <div class="flex-1 space-y-2">
+                <p class="font-body-md text-body-md text-on-surface-variant">Scan the QR code with any UPI app (GPay, PhonePe, Paytm), or pay to:</p>
+                <p class="font-subheading text-subheading text-primary" id="upiIdDisplay"></p>
+                <p class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Rs. 1000/-</p>
+                <p class="font-body-md text-xs text-outline">After paying, enter the UPI transaction / UTR reference number below to complete your registration.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block font-label-caps text-label-caps text-on-surface-variant" for="transactionId">Payment Transaction / UTR Number *</label>
+              <input class="w-full bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="transactionId" name="transactionId" required type="text" placeholder="e.g. 402312345678"/>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block font-label-caps text-label-caps text-on-surface-variant">Payment Receipt / Screenshot (optional)</label>
+              <div class="flex items-center justify-center w-full">
+                <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-outline-variant/50 border-dashed rounded cursor-pointer bg-surface hover:bg-surface-container-low transition-colors" for="receiptFile" id="receiptDropzoneLabel">
+                  <div class="flex flex-col items-center justify-center pt-4 pb-5" id="receiptDropzoneInner">
+                    <span class="material-symbols-outlined text-outline mb-1">receipt_long</span>
+                    <p class="mb-1 font-body-md text-sm text-on-surface-variant"><span class="font-semibold text-primary">Click to upload</span> receipt (image or PDF)</p>
+                  </div>
+                  <input accept="image/*,.pdf" class="hidden" id="receiptFile" type="file" onchange="handleFileSelect(this.files[0],'receipt')"/>
+                </label>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-outline-variant/30">
+              <div class="pt-4 mb-1">
+                <h3 class="font-subheading text-subheading text-primary mb-1">Poster Abstract (optional)</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">Not required to register — only needed if you intend to present a poster. You can also email it later.</p>
+              </div>
+              <div class="flex items-center justify-center w-full">
+                <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-outline-variant/50 border-dashed rounded cursor-pointer bg-surface hover:bg-surface-container-low transition-colors" for="abstractFile" id="dropzoneLabel">
+                  <div class="flex flex-col items-center justify-center pt-4 pb-5" id="dropzoneInner">
+                    <span class="material-symbols-outlined text-outline mb-1">upload_file</span>
+                    <p class="mb-1 font-body-md text-sm text-on-surface-variant"><span class="font-semibold text-primary">Click to upload</span> abstract (PDF)</p>
+                  </div>
+                  <input accept=".pdf" class="hidden" id="abstractFile" type="file" onchange="handleFileSelect(this.files[0],'abstract')"/>
+                </label>
+              </div>
+              <p class="font-body-md text-xs text-outline mt-1">Max file size 5MB each. Please use the prescribed abstract template.</p>
+            </div>
+
+            <div class="pt-6">
+              <button class="w-full bg-primary text-on-primary py-4 px-6 rounded font-subheading text-body-lg font-bold hover:bg-primary-container hover:shadow-[0_4px_12px_rgba(0,32,104,0.15)] transition-all flex justify-center items-center gap-2" type="submit" id="submitRegBtn">
+                <span id="submitRegBtnText">Submit Registration</span>
+                <span class="material-symbols-outlined">check_circle</span>
+              </button>
+              <p class="text-center font-body-md text-xs text-on-surface-variant mt-3">
+                By submitting, you agree to the symposium terms and conditions.
+              </p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================= ABOUT PAGE ========================= -->
+<section id="page-about" class="page">
+  <main class="max-w-container-max-width mx-auto px-gutter py-section-padding-mobile md:py-section-padding-desktop space-y-24 bg-grid-pattern min-h-screen">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-8">
+        <h1 class="font-headline-xl text-headline-xl text-primary">About IIT DHARWAD</h1>
+        <div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+          <p>IIT Dharwad is an Institute of National Importance established in 2016 by the Ministry of Education, Government of India. Located in the serene and historic city of Dharwad, Karnataka, the institution is committed to excellence in teaching, research, and innovation across diverse disciplines of science and engineering.</p>
+          <div class="flex items-start gap-4">
+            <img class="w-24 h-24 rounded-full object-cover shadow-sm border border-outline-variant flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBalkUdsappSbI1UbKHpkppW92jr7ABsRgt8S57voEl_HYfSjWiDENJgsjTLnKdGlGXT7yj8QyV01f8I2L6AeXSM5mN0Qxe43Z2a5bD7dzmah4JuaCxnN3gvAl2TD7IWipi7stEXIhiyFD1UE1znyUAvcu1HYYO6o2g77PfPOxZDriBo20ggb3ALMEJN-VkODpz-6mhpncPsH-5aBnUc9kZmuY5YbNAz9UGKp_jgpkugSb9LmaDEImr"/>
+            <p>With a vibrant and growing campus spread across a 470-acre permanent campus, IIT Dharwad offers a dynamic academic environment supported by state-of-the-art laboratories, advanced research facilities, and a collaborative culture. The institute fosters interdisciplinary learning and emphasizes both foundational knowledge and emerging technologies to address real-world challenges.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <img class="w-24 h-24 rounded-full object-cover shadow-sm border border-outline-variant flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtaWwN2CR6jQdV_djW6RpUcPB03P6Tr9DCzZKLv4yTSvJD5NfTwaX9MKfMtd4I7aOCEc3yF4mAzG9LiCmxK_GEBBga_9wniL3WrutD9Jzp8mxadAktoEfMHao8ahEXtrDWmfHYBupG3ZtZskqips5AghP1oEiZBOAxLBSp8pJQiwR4vqq-vk9l6aZhmf5qDpcmn1gw1mABXsPKne83tuyT6EnFvAIQ-mRFor0y_EvhIMCJqzgTML9f"/>
+            <p>Set amid the Western Ghats, Dharwad offers a pleasant climate and is well-connected to road, rail, and air through nearby Hubballi. IIT Dharwad continues to attract talented students, researchers, and faculty across the country and is steadily growing into a hub of academic and research excellence.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-low border border-primary/10 rounded-xl p-8 relative overflow-hidden shadow-sm">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full -mr-16 -mt-16"></div>
+          <div class="relative z-10 flex gap-6 items-start">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">science</span>
+            </div>
+            <div>
+              <h3 class="font-subheading text-subheading text-primary mb-3 uppercase tracking-wider">Chemical Engineering Department</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">The Department of Chemical Engineering at IIT Dharwad was established with a vision to create a center of excellence in education and research in chemical and allied engineering fields. The department offers undergraduate (BTech) and postgraduate (Ph.D.) programs, with a strong emphasis on core chemical engineering principles, computational tools, and interdisciplinary applications.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <div class="space-y-6 text-on-surface-variant font-body-md text-body-md">
+          <p>Our faculty is engaged in high-quality research in areas such as colloids and interfaces, soft matter, energy systems catalyst, process modeling and simulation, electrochemical systems, reaction engineering, and materials science. The department actively collaborates with national and international institutes, and encourages innovation and entrepreneurship among students. With a growing infrastructure that includes modern laboratories, advanced research facilities, and a student-focused learning environment, the department aims to train the next generation of engineers and researchers to address the technological challenges of the future.</p>
+        </div>
+        <div>
+          <h2 class="font-headline-lg text-headline-lg text-secondary mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">explore</span>
+            About the Symposium
+          </h2>
+          <div class="space-y-4 text-on-surface-variant font-body-md text-body-md">
+            <p>Multiphase flow, microfluidics, advanced materials and CFD sit at the heart of process, energy, biomedical and electronics engineering– from droplet-based synthesis and rainfall physics to lab-on-chip diagnostics. MFM-AI 2026 brings together CFD modelers, experimentalists, materials scientists and data scientists on a single national platform, pairing rigorous science with hands-on, industry-scale simulation training</p>
+            <p>Multiphase flows and microfluidic technologies have applications in energy, biomedical engineering, drug delivery, chemical processing, environmental technologies, and advanced materials. Molecular dynamics and Monte Carlo simulations enable the design of advanced materials for drug delivery, gas separation, energy storage, catalysts, and sustainable technologies. With CFD, performance computing, machine learning, and AI offers opportunities for multiscale modeling, process optimization, and accelerated materials discovery.</p>
+            <p>The symposium will feature invited talks, technical sessions, and interactive discussions involving academia, industry, and research institutions. It aims to strengthen research networks and promote interdisciplinary collaboration toward innovative and sustainable technologies through modeling, simulation, experimentation, advanced materials, and AI-driven approaches.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <section class="lg:col-span-7 bg-primary rounded-xl p-8 text-on-primary">
+        <div class="flex items-center justify-center gap-3 mb-8 border-b border-on-primary/20 pb-4">
+          <span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">groups</span>
+          <h2 class="font-headline-lg text-headline-lg text-center uppercase">Organising Team</h2>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-start shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
+            <img class="w-24 h-24 rounded-full border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w500"/>
+            <div>
+              <h3 class="font-subheading text-subheading text-primary mb-1">Prof. Somasekhara Goud</h3>
+              <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Chair</p>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-3">His expertise spans multiphase flow, CFD, microfluidics, non-Newtonian flows, and slurry transport, with research focused on droplet/bubble dynamics, emulsions, microfluidic separation, and AI/ML-based simulations.</p>
+              <a href="mailto:somasekhar.sonti@iitdh.ac.in" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined text-base">mail</span> somasekhar.sonti@iitdh.ac.in
+              </a>
+            </div>
+          </div>
+          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-start shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
+            <img class="w-24 h-24 rounded-full border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w500"/>
+            <div>
+              <h3 class="font-subheading text-subheading text-primary mb-1">Prof. Ravi Chandra Dutta</h3>
+              <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Co-Chair</p>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-3">His research focuses on AI-driven materials design, gas separation membranes, electrified interfaces, and MOF-based drug delivery, integrating molecular simulations, theory, and machine learning for advanced material development.</p>
+              <a href="mailto:ravicd@iitdh.ac.in" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined text-base">mail</span> ravicd@iitdh.ac.in
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="lg:col-span-5 bg-surface-container-low border border-primary/10 rounded-xl overflow-hidden shadow-sm flex flex-col">
+        <div class="bg-secondary p-6 flex items-center justify-center gap-3">
+          <span class="material-symbols-outlined text-3xl text-on-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-secondary text-center uppercase">How to Reach IIT Dharwad</h2>
+        </div>
+        <div class="p-8 flex-grow space-y-6">
+          <p class="font-subheading text-subheading text-primary font-bold">IIT DHARWAD is well connected by air, rail, and road:</p>
+          <ul class="space-y-6">
+            <li class="flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight</span>
+              </div>
+              <div>
+                <h4 class="font-subheading text-subheading text-primary mb-1">By Air:</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">The nearest airports are Hubballi (HBX, ~25 km) and Belagavi (IXG, ~65 km), with regular flights from Bengaluru, Mumbai, Delhi, Hyderabad, Chennai, and Ahmedabad.</p>
+              </div>
+            </li>
+            <li class="flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">train</span>
+              </div>
+              <div>
+                <h4 class="font-subheading text-subheading text-primary mb-1">By Rail:</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">Dharwad Station (~10 km) and Hubballi Junction (~35 km) offer excellent rail connectivity.</p>
+              </div>
+            </li>
+            <li class="flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+              </div>
+              <div>
+                <h4 class="font-subheading text-subheading text-primary mb-1">By Road:</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">IIT Dharwad lies on NH-4 (Bengaluru Pune highway) and is accessible by bus, taxi, or private vehicle. Travel time from Bengaluru is around 8-9 hours.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</section>
+
+<!-- ========================= GALLERY PAGE (styled to match; not in original Stitch export) ========================= -->
+<section id="page-gallery" class="page">
+  <section class="bg-surface-container-low py-section-padding-desktop px-gutter relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 32px 32px;"></div>
+    <div class="max-w-container-max-width mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-4 font-label-caps text-label-caps">
+        <span class="material-symbols-outlined text-sm">photo_camera</span>
+        Campus &amp; Facilities
+      </div>
+      <h1 class="font-headline-xl text-headline-xl text-primary mb-4">Symposium Photo Gallery</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Explore the state-of-the-art 470-acre permanent campus of IIT Dharwad and cutting-edge Chemical Engineering facilities.
+      </p>
+    </div>
+  </section>
+  <section class="py-section-padding-desktop px-gutter">
+    <div class="max-w-container-max-width mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ========================= SPONSORS PAGE ========================= -->
+<section id="page-sponsors" class="page">
+  <!-- Hero -->
+  <section class="bg-primary py-16 px-gutter relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <div class="max-w-container-max-width mx-auto text-center relative z-10">
+      <h1 class="font-headline-xl text-headline-xl text-on-primary mb-2">Sponsor</h1>
+      <p class="font-label-caps text-label-caps text-secondary-fixed">
+        <button onclick="goTo('home')" class="hover:underline">Home</button> &gt; Sponsor
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Sponsor -->
+  <section class="py-section-padding-desktop px-gutter">
+    <div class="max-w-container-max-width mx-auto">
+      <div class="bg-gradient-to-br from-primary to-tertiary rounded-xl p-8 md:p-10 text-on-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 18px 18px;"></div>
+        <div class="relative z-10">
+          <div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full mb-6 font-headline-lg-mobile text-lg font-bold">
+            Why Sponsor?
+          </div>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">chevron_right</span>
+              <span class="font-body-lg text-body-lg">Increase brand visibility among national and international audience</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">chevron_right</span>
+              <span class="font-body-lg text-body-lg">Logo on all promotional materials, website and event banners</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">chevron_right</span>
+              <span class="font-body-lg text-body-lg">Recognition during inaugural and valedictory sessions</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">chevron_right</span>
+              <span class="font-body-lg text-body-lg">Exhibition / stall opportunity</span>
+            </li>
+          </ul>
+          <button onclick="openSponsorContact()" class="mt-8 bg-secondary-container text-on-secondary-container px-6 py-3 rounded font-label-caps text-label-caps hover:bg-secondary-fixed transition-colors inline-flex items-center gap-2">
+            Become a Sponsor <span class="material-symbols-outlined text-base">mail</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Sponsors -->
+  <section class="pb-section-padding-desktop px-gutter">
+    <div class="max-w-container-max-width mx-auto">
+      <h2 class="font-headline-lg text-headline-lg text-primary text-center mb-12">Our Sponsors</h2>
+      <div id="sponsorTiers" class="space-y-14"></div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ========================= FOOTER (shared) ========================= -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-auto">
+  <div class="w-full py-section-padding-desktop px-gutter flex flex-col md:flex-row justify-between max-w-container-max-width mx-auto gap-8">
+    <div class="flex flex-col gap-4 max-w-sm">
+      <span class="text-headline-lg font-headline-lg text-primary">ANRF National Symposium</span>
+      <p class="font-body-md text-body-md text-on-surface opacity-80">
+        Advancing the frontiers of Chemical Engineering through high-level scientific discourse and collaboration.
+      </p>
+    </div>
+    <div class="flex flex-col gap-4">
+      <nav class="flex flex-col md:flex-row gap-4 md:gap-8">
+        <button onclick="goTo('about')" class="text-left font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline">Contact Us</button>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="https://www.iitdh.ac.in" target="_blank" rel="noopener noreferrer">IITDH Website</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="https://anrfonline.in" target="_blank" rel="noopener noreferrer">ANRF Foundation</a>
+      </nav>
+      <div class="mt-4 md:mt-auto pt-4 border-t border-outline-variant/30 text-sm font-body-md text-body-md text-on-surface opacity-70">
+        © 2026 IIT Dharwad. Department of Chemical Engineering. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================= Brochure Modal ========================= -->
+<div id="brochureModal" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-4" onclick="if(event.target===this) closeBrochure()">
+  <div class="bg-surface-container-lowest rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+    <div class="flex items-center justify-between border-b border-outline-variant p-6 flex-shrink-0">
+      <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Symposium Brochure</h3>
+      <button onclick="closeBrochure()" class="text-outline hover:text-on-surface"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="flex-1 min-h-[60vh] bg-surface">
+      <iframe src="https://drive.google.com/file/d/1PFB6G2JKSx8JVDDWGeyTM6kzu_oTYGSI/preview" class="w-full h-full min-h-[60vh]" allow="autoplay"></iframe>
+    </div>
+    <div class="p-4 border-t border-outline-variant flex-shrink-0">
+      <a href="https://drive.google.com/uc?export=download&id=1PFB6G2JKSx8JVDDWGeyTM6kzu_oTYGSI" target="_blank" rel="noopener noreferrer" class="w-full bg-primary text-on-primary py-3 px-6 rounded font-label-caps text-label-caps flex justify-center items-center gap-2 hover:bg-primary-container transition-colors">
+        <span class="material-symbols-outlined text-base">download</span> Download PDF Brochure
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= Sponsor Contact Modal ========================= -->
+<div id="sponsorContactModal" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-4" onclick="if(event.target===this) closeSponsorContact()">
+  <div class="bg-surface-container-lowest rounded-xl max-w-md w-full shadow-2xl">
+    <div class="flex items-center justify-between border-b border-outline-variant p-6">
+      <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Contact for Sponsorship</h3>
+      <button onclick="closeSponsorContact()" class="text-outline hover:text-on-surface"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="p-6 space-y-4">
+      <p class="font-body-md text-body-md text-on-surface-variant">Reach out to either of the organizers below to discuss sponsorship packages.</p>
+
+      <div class="bg-surface border border-outline-variant rounded-lg p-4">
+        <p class="font-subheading text-sm font-bold text-primary mb-1">Prof. Somasekhara Goud Sontti</p>
+        <p class="font-label-caps text-label-caps text-on-surface-variant mb-3">Organizing Chair</p>
+        <div class="flex items-center gap-2 bg-surface-container-low rounded px-3 py-2">
+          <span class="font-body-md text-sm text-on-surface flex-1 truncate" id="chairEmailText">somasekhar.sonti@iitdh.ac.in</span>
+          <button onclick="copySponsorEmail('chairEmailText', this)" class="material-symbols-outlined text-primary hover:text-primary-container flex-shrink-0" title="Copy email">content_copy</button>
+        </div>
+      </div>
+
+      <div class="bg-surface border border-outline-variant rounded-lg p-4">
+        <p class="font-subheading text-sm font-bold text-primary mb-1">Prof. Ravi Chandra Dutta</p>
+        <p class="font-label-caps text-label-caps text-on-surface-variant mb-3">Organizing Co-Chair</p>
+        <div class="flex items-center gap-2 bg-surface-container-low rounded px-3 py-2">
+          <span class="font-body-md text-sm text-on-surface flex-1 truncate" id="coChairEmailText">ravicd@iitdh.ac.in</span>
+          <button onclick="copySponsorEmail('coChairEmailText', this)" class="material-symbols-outlined text-primary hover:text-primary-container flex-shrink-0" title="Copy email">content_copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================= Gallery Lightbox ========================= -->
+<div id="galleryModal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4" onclick="if(event.target===this) closeGalleryModal()">
+  <div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full overflow-hidden shadow-2xl">
+    <div class="relative h-[380px] bg-black">
+      <img id="galleryModalImg" src="" class="w-full h-full object-contain"/>
+      <button onclick="closeGalleryModal()" class="absolute top-4 right-4 w-9 h-9 bg-black/60 text-white rounded-full flex items-center justify-center hover:bg-black"><span class="material-symbols-outlined text-lg">close</span></button>
+    </div>
+    <div class="p-6">
+      <h3 id="galleryModalTitle" class="font-subheading text-subheading text-primary mb-1"></h3>
+      <p id="galleryModalCaption" class="font-body-md text-body-md text-on-surface-variant"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= DATA ================= */
+const SPEAKERS = [
+  {name:'Prof. Pushpavanam S', institution:'IIT Madras', bio:'Expert in flow visualization, non-linear dynamics, and modeling and simulation.',
+   photo:'https://drive.google.com/thumbnail?id=1XgOWBHtUZC4mSRTvVSoU4dD7hyooZ7H8&sz=w500'},
+  {name:'Prof. Kirti Chandra Sahu', institution:'IIT Hyderabad', bio:'Expert in multiphase flows, flow instability, fluid dynamics, and bubbles and drops.',
+   photo:'https://drive.google.com/thumbnail?id=1joPz8xDzTKKZhts9YaqYxFIj_O6XJT1I&sz=w500'},
+  {name:'Prof. Arnab Atta', institution:'IIT Kharagpur', bio:'Expert in multiphase flows, microfluidics, CFD, and process intensification.',
+   photo:'https://drive.google.com/thumbnail?id=1vo5GibhsWDjd4kPVtF1jHhI4JlKKwyh_&sz=w500', photoPosition:'center 15%'},
+  {name:'Prof. Raghavendra Gupta', institution:'IIT Guwahati', bio:'Expert in multiphase flows, microfluidics, C&EFD, and micro process engineering.',
+   photo:'https://drive.google.com/thumbnail?id=1mPxIGA1Xv1QUZXUJdezk-BgcZkeMccGi&sz=w500'},
+  {name:'Prof. Venkat Gundabala', institution:'IIT Bombay', bio:'Expert in bio-microfluidics, water-based coatings, and bio-based packing.',
+   photo:'https://drive.google.com/thumbnail?id=1xSEboLtJoybU7Wr5lR9CAgIrF10mTSTY&sz=w500', photoPosition:'center 15%'},
+  {name:'Prof. Sai Phani Kumar V.', institution:'IISER Bhopal', bio:'Expert in computational catalysis and computational material science.',
+   photo:'https://drive.google.com/thumbnail?id=13MTpigIFktyIytCRU1XnY04RMUwcTv6-&sz=w500'},
+  {name:'Prof. Manish Kumar', institution:'IISc Bengaluru', bio:'Expert in theory, computation, complex fluids, soft matter, and dynamics of complex fluids.',
+   photo:'https://drive.google.com/thumbnail?id=1P78yWfieWu3-MYWX71RJiOAhLwi1fx6d&sz=w500'},
+  {name:'Dr. Shasank Tiwari', institution:'Shell, Bengaluru', bio:'Expert in advanced fluid dynamics and reactor modelling, computational fluid dynamics, and discrete element method.',
+   photo:'https://drive.google.com/thumbnail?id=1rGH5jOBYWGiwr0wDwOtucKnKGsbzMBlE&sz=w500'}
+];
+
+const GALLERY_ITEMS = [
+  {title:'Administration Block', category:'Campus Architecture', img:'https://drive.google.com/thumbnail?id=12RyF3ULSPHxsdia82Uxufw2zDfOI5uB0&sz=w1200', caption:'The Administration Block at IIT Dharwad permanent campus.'},
+  {title:'Central Learning Theatre', category:'Campus Architecture', img:'https://drive.google.com/thumbnail?id=1MUmHijOE0W_EoLAg9zcROjzB5do6S_V5&sz=w1200', caption:'The Central Learning Theatre at IIT Dharwad permanent campus.'},
+  {title:'Knowledge Resource and Data Centre', category:'Campus Architecture', img:'https://drive.google.com/thumbnail?id=1e4eP1XPL8e-nflevCcqPZWWp74ciHdmV&sz=w1200', caption:'The Knowledge Resource and Data Centre at IIT Dharwad permanent campus.'}
+];
+
+/* Leadership — replace `photo: null` with an image URL once you have actual photos.
+   Until then, names render with a placeholder avatar. */
+const LEADERSHIP = [
+  { name: 'Prof. Venkappaya R. Desai', role: 'Patron', title: 'Director, IIT Dharwad', photo: 'https://drive.google.com/thumbnail?id=1Bb0cZNJO5TlceJt0KUqto5hJ5dfZ1aLl&sz=w500' },
+  { name: 'Prof. Suvamay Jana', role: 'Head of Chemical Engineering', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1_m1Tb5xD4opAIqIK-jkWh8Fhva72zORN&sz=w500' },
+  { name: 'Prof. Somasekhara Goud Sontti', role: 'Chair', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w500' },
+  { name: 'Prof. Ravi Chandra Dutta', role: 'Co-Chair', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w500' }
+];
+
+/* Sponsor tiers — replace `logo: null` with an image URL once you have actual logo files,
+   e.g. logo: 'https://yourhost.com/logos/company.png'. Until then, names render as text plates. */
+const SPONSOR_TIERS = [
+  { tier: 'Platinum Sponsors', tierColor: 'text-tertiary', logoHeight: 'h-24', cols: 'grid-cols-2 sm:grid-cols-3',
+    sponsors: [
+      { name: 'Your Platinum Sponsor', logo: null }
+    ] },
+  { tier: 'Gold Sponsors', tierColor: 'text-secondary', logoHeight: 'h-20', cols: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4',
+    sponsors: [
+      { name: 'Gold Sponsor 1', logo: null },
+      { name: 'Gold Sponsor 2', logo: null },
+      { name: 'Gold Sponsor 3', logo: null },
+      { name: 'Gold Sponsor 4', logo: null }
+    ] },
+  { tier: 'Silver Sponsors', tierColor: 'text-outline', logoHeight: 'h-16', cols: 'grid-cols-2 sm:grid-cols-3',
+    sponsors: [
+      { name: 'Silver Sponsor 1', logo: null },
+      { name: 'Silver Sponsor 2', logo: null },
+      { name: 'Silver Sponsor 3', logo: null }
+    ] },
+  { tier: 'Under the Patronage of', tierColor: 'text-primary', logoHeight: 'h-16', cols: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4',
+    sponsors: [
+      { name: 'IIT Dharwad', logo: null },
+      { name: 'ANRF', logo: null }
+    ] }
+];
+
+/* ================= RENDER ================= */
+function renderSpeakers(){
+  document.getElementById('speakersGrid').innerHTML = SPEAKERS.map(sp => `
+    <div class="bg-surface-container-lowest border border-primary/10 rounded-xl overflow-hidden hover:shadow-[0_12px_24px_rgba(0,32,104,0.04)] transition-all duration-300 group flex flex-col items-center p-8 relative">
+      <div class="w-44 h-44 rounded-full border-4 border-secondary-fixed mb-6 overflow-hidden relative shadow-sm">
+        <img class="w-full h-full object-cover" style="object-position: ${sp.photoPosition || 'center'};" src="${sp.photo}"/>
+      </div>
+      <div class="text-center w-full">
+        <h3 class="font-subheading text-subheading text-primary mb-1 group-hover:text-tertiary transition-colors">${sp.name}</h3>
+        <p class="font-body-md text-body-md text-secondary font-medium mb-4">${sp.institution}</p>
+        <div class="h-px w-16 bg-outline-variant mx-auto mb-4"></div>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm speaker-bio-clamp">${sp.bio}</p>
+      </div>
+    </div>`).join('');
+}
+
+function renderSponsors(){
+  document.getElementById('sponsorTiers').innerHTML = SPONSOR_TIERS.map(group => `
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="flex-1 h-px bg-outline-variant"></div>
+        <h3 class="font-label-caps text-label-caps ${group.tierColor} uppercase tracking-wider whitespace-nowrap">${group.tier}</h3>
+        <div class="flex-1 h-px bg-outline-variant"></div>
+      </div>
+      <div class="grid ${group.cols} gap-6 max-w-4xl mx-auto">
+        ${group.sponsors.map(s => `
+          <div class="bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center justify-center p-6 ${group.logoHeight} hover:border-primary hover:shadow-sm transition-all">
+            ${s.logo
+              ? `<img src="${s.logo}" alt="${s.name}" class="max-h-full max-w-full object-contain"/>`
+              : `<span class="font-subheading text-sm text-on-surface-variant text-center">${s.name}</span>`
+            }
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function renderLeadership(){
+  document.getElementById('leadershipGrid').innerHTML = LEADERSHIP.map(p => `
+    <div class="text-center">
+      <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-secondary-fixed mx-auto mb-4 overflow-hidden bg-surface-container-low flex items-center justify-center">
+        ${p.photo
+          ? `<img src="${p.photo}" alt="${p.name}" class="w-full h-full object-cover"/>`
+          : `<span class="material-symbols-outlined text-5xl text-outline">person</span>`
+        }
+      </div>
+      <p class="font-label-caps text-label-caps text-secondary font-bold uppercase mb-1">${p.role}</p>
+      <h3 class="font-subheading text-sm md:text-base font-bold text-primary leading-snug">${p.name}</h3>
+      <p class="font-body-md text-xs md:text-sm text-on-surface-variant mt-1">${p.title}</p>
+    </div>`).join('');
+}
+
+function renderSponsorMarquee(){
+  // Flatten Platinum -> Gold -> Silver only, in that order, no tier labels — just logos.
+  const marqueeTiers = SPONSOR_TIERS.filter(g => g.tier !== 'Under the Patronage of');
+  const allSponsors = marqueeTiers.flatMap(g => g.sponsors);
+  const plate = s => `
+    <div class="flex items-center justify-center h-16 w-40 mx-4 flex-shrink-0 bg-surface-container-lowest border border-outline-variant rounded-lg">
+      ${s.logo
+        ? `<img src="${s.logo}" alt="${s.name}" class="max-h-10 max-w-[85%] object-contain"/>`
+        : `<span class="font-subheading text-xs text-on-surface-variant text-center px-2">${s.name}</span>`
+      }
+    </div>`;
+  // Duplicate the sequence so the track can loop seamlessly at -50% translation.
+  const doubled = [...allSponsors, ...allSponsors];
+  document.getElementById('sponsorMarqueeTrack').innerHTML = doubled.map(plate).join('');
+}
+
+function renderGallery(){
+  document.getElementById('galleryGrid').innerHTML = GALLERY_ITEMS.map((g,i) => `
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-[0_12px_24px_rgba(0,32,104,0.08)] transition-all duration-300 cursor-pointer group" onclick="openGalleryModal(${i})">
+      <div class="h-56 overflow-hidden bg-surface-container-low relative">
+        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${g.img}"/>
+        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-3xl">visibility</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <span class="font-label-caps text-label-caps text-secondary uppercase">${g.category}</span>
+        <h3 class="font-subheading text-subheading text-primary mt-1 mb-2">${g.title}</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm">${g.caption}</p>
+      </div>
+    </div>`).join('');
+}
+function openGalleryModal(i){
+  const g = GALLERY_ITEMS[i];
+  document.getElementById('galleryModalImg').src = g.img;
+  document.getElementById('galleryModalTitle').textContent = g.title;
+  document.getElementById('galleryModalCaption').textContent = g.caption;
+  document.getElementById('galleryModal').classList.remove('hidden');
+  document.getElementById('galleryModal').classList.add('flex');
+}
+function closeGalleryModal(){
+  document.getElementById('galleryModal').classList.add('hidden');
+  document.getElementById('galleryModal').classList.remove('flex');
+}
+
+function openBrochure(){
+  document.getElementById('brochureModal').classList.remove('hidden');
+  document.getElementById('brochureModal').classList.add('flex');
+}
+function closeBrochure(){
+  document.getElementById('brochureModal').classList.add('hidden');
+  document.getElementById('brochureModal').classList.remove('flex');
+}
+
+function openSponsorContact(){
+  document.getElementById('sponsorContactModal').classList.remove('hidden');
+  document.getElementById('sponsorContactModal').classList.add('flex');
+}
+function closeSponsorContact(){
+  document.getElementById('sponsorContactModal').classList.add('hidden');
+  document.getElementById('sponsorContactModal').classList.remove('flex');
+}
+function copySponsorEmail(elId, btn){
+  const text = document.getElementById(elId).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.textContent;
+    btn.textContent = 'check';
+    setTimeout(() => { btn.textContent = original; }, 1500);
+  }).catch(() => {
+    alert('Could not copy automatically. Email: ' + text);
+  });
+}
+
+/* ================= NAV ================= */
+function goTo(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  window.scrollTo(0,0);
+  setActiveNav(id);
+}
+function handleNav(e, id){
+  e.preventDefault();
+  goTo(id);
+  return false;
+}
+function setActiveNav(id){
+  document.querySelectorAll('[data-nav]').forEach(el => {
+    const isActive = el.getAttribute('data-nav') === id;
+    el.classList.toggle('text-primary', isActive);
+    el.classList.toggle('font-bold', isActive);
+    el.classList.toggle('border-b-2', isActive);
+    el.classList.toggle('border-secondary', isActive);
+    el.classList.toggle('text-on-surface-variant', !isActive);
+    el.classList.toggle('font-medium', !isActive);
+  });
+}
+function toggleMobileMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const open = menu.classList.toggle('open');
+  document.getElementById('mobileMenuIcon').textContent = open ? 'close' : 'menu';
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mobileMenuIcon').textContent = 'menu';
+}
+
+/* ================= REGISTRATION CONFIG ================= */
+// TODO: after deploying the Apps Script (see Code.gs), paste its Web App URL here.
+const CONFIG = {
+  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzlQycEPbfaTGqXjTk5j6lfCsSZvTfxqp-EuGDdP-kyckyQ50vsiSV4fTI9_zHLFNxY/exec',
+  UPI_ID: 'mfmiitdh@okhdfcbank',   // TODO: replace with the real UPI ID / VPA
+  PAYEE_NAME: 'IIT Dharwad MFM Symposium',
+  AMOUNT: 1000,
+  MAX_FILE_MB: 5
+};
+
+let regData = {};       // step 1 field values
+let filePayload = {};   // { abstract: {name, base64}, receipt: {name, base64} }
+
+/* ================= FILE HANDLING ================= */
+function fileToBase64(file){
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]); // strip data: prefix
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+async function handleFileSelect(file, kind){
+  if(!file) return;
+  if(file.size > CONFIG.MAX_FILE_MB * 1024 * 1024){
+    alert(`File too large. Max size is ${CONFIG.MAX_FILE_MB}MB.`);
+    return;
+  }
+  if(kind === 'abstract' && file.type !== 'application/pdf'){
+    alert('Please upload a valid PDF document for the abstract.');
+    return;
+  }
+  const base64 = await fileToBase64(file);
+  filePayload[kind] = { name: file.name, mimeType: file.type || 'application/octet-stream', base64 };
+
+  if(kind === 'abstract'){
+    document.getElementById('dropzoneInner').innerHTML = `
+      <span class="material-symbols-outlined text-primary mb-1">description</span>
+      <p class="font-body-md text-sm text-on-surface-variant"><span class="font-semibold text-primary">${file.name}</span> attached</p>`;
+  } else {
+    document.getElementById('receiptDropzoneInner').innerHTML = `
+      <span class="material-symbols-outlined text-primary mb-1">description</span>
+      <p class="font-body-md text-sm text-on-surface-variant"><span class="font-semibold text-primary">${file.name}</span> attached</p>`;
+  }
+}
+
+/* ================= STEP NAVIGATION ================= */
+function goToPaymentStep(e){
+  e.preventDefault();
+  const fullName = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const affiliation = document.getElementById('affiliation').value.trim();
+  const category = document.getElementById('participantType').value;
+  const contactNumber = document.getElementById('contactNumber').value.trim();
+  if(!fullName || !email || !affiliation || !category){
+    alert('Please fill in all required fields.');
+    return false;
+  }
+  regData = { fullName, email, affiliation, category, contactNumber };
+
+  document.getElementById('regStep1').classList.add('hidden');
+  document.getElementById('regStep2').classList.remove('hidden');
+  document.getElementById('stepIndicator1').firstElementChild.classList.replace('bg-primary','bg-primary-fixed');
+  document.getElementById('stepDot2').classList.remove('bg-surface-variant','text-on-surface-variant');
+  document.getElementById('stepDot2').classList.add('bg-primary','text-on-primary');
+  document.getElementById('stepLabel2').classList.remove('text-on-surface-variant');
+  document.getElementById('stepLabel2').classList.add('text-primary','font-bold');
+
+  const upiLink = `upi://pay?pa=${encodeURIComponent(CONFIG.UPI_ID)}&pn=${encodeURIComponent(CONFIG.PAYEE_NAME)}&am=${CONFIG.AMOUNT}&cu=INR`;
+  document.getElementById('paymentQR').src = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(upiLink)}`;
+  document.getElementById('upiIdDisplay').textContent = CONFIG.UPI_ID;
+
+  window.scrollTo(0,0);
+  return false;
+}
+function backToDetailsStep(){
+  document.getElementById('regStep2').classList.add('hidden');
+  document.getElementById('regStep1').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+/* ================= SUBMIT TO APPS SCRIPT ================= */
+async function submitRegistration(e){
+  e.preventDefault();
+  const transactionId = document.getElementById('transactionId').value.trim();
+  if(!transactionId){
+    alert('Please enter your payment transaction / UTR number.');
+    return false;
+  }
+  if(CONFIG.SCRIPT_URL.includes('PASTE_YOUR')){
+    alert('The registration backend is not connected yet (SCRIPT_URL is not set). See the deployment instructions to connect it.');
+    return false;
+  }
+
+  const btn = document.getElementById('submitRegBtn');
+  const btnText = document.getElementById('submitRegBtnText');
+  btn.disabled = true;
+  btn.classList.add('opacity-60','cursor-not-allowed');
+  btnText.textContent = 'Submitting... Please wait';
+
+  const payload = {
+    ...regData,
+    transactionId,
+    amount: CONFIG.AMOUNT,
+    abstract: filePayload.abstract || null,
+    receipt: filePayload.receipt || null
+  };
+
+  try{
+    const res = await fetch(CONFIG.SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // avoids CORS preflight to Apps Script
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+    if(result.status !== 'success'){
+      throw new Error(result.message || 'Submission failed');
+    }
+    showSuccess(result.ref || ('IITDH-MFM-' + Math.floor(100000 + Math.random()*900000)));
+  } catch(err){
+    btn.disabled = false;
+    btn.classList.remove('opacity-60','cursor-not-allowed');
+    btnText.textContent = 'Submit Registration';
+    alert('Something went wrong submitting your registration: ' + err.message + '\\nPlease check your connection and try again, or contact mfmiitdh@gmail.com.');
+  }
+  return false;
+}
+
+function showSuccess(ref){
+  document.getElementById('regFormWrap').innerHTML = `
+    <div class="text-center py-8">
+      <div class="w-16 h-16 bg-primary-fixed text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+      </div>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Registration Confirmed!</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-6">Your registration for ANRF MFM-AI 2026 at IIT Dharwad is successful. A confirmation has been sent to the organizing team.</p>
+      <div class="bg-surface border border-outline-variant rounded-lg p-5 max-w-sm mx-auto text-left space-y-2 font-body-md text-sm mb-6">
+        <div class="flex justify-between border-b border-outline-variant/30 pb-2"><span class="text-on-surface-variant">Registration Ref:</span><span class="font-bold text-primary">${ref}</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">Name:</span><span class="font-semibold">${regData.fullName}</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">Email:</span><span>${regData.email}</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">Affiliation:</span><span>${regData.affiliation}</span></div>
+        <div class="flex justify-between pt-2 border-t border-outline-variant/30 font-bold"><span class="text-primary">Amount:</span><span class="text-secondary">Rs. 1000/- (Paid)</span></div>
+      </div>
+      <button onclick="location.reload()" class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-primary-container transition-colors">Register Another Participant</button>
+    </div>`;
+}
+
+/* ================= INIT ================= */
+renderSpeakers();
+renderGallery();
+renderSponsors();
+renderSponsorMarquee();
+renderLeadership();
+const startScreens = ['home','speakers','registration','about','gallery','sponsors'];
+const startHash = window.location.hash.replace('#','');
+goTo(startScreens.includes(startHash) ? startHash : 'home');
+</script>
+</body>
+</html>
