@@ -228,8 +228,14 @@
           <button onclick="openAbstractTemplate()" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Abstract Template</button>
         </div>
       </div>
-      <div class="relative w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden shadow-sm border border-outline-variant">
-        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://drive.google.com/thumbnail?id=15EBb3pD8h-DNxfU1IbILY3K581qSU8g1&sz=w2000')"></div>
+      <div class="relative w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden shadow-sm border border-outline-variant group" id="heroCarousel" onmouseenter="pauseHeroCarousel()" onmouseleave="startHeroAutoplay()">
+        <div class="flex h-full transition-transform duration-700 ease-in-out" id="heroCarouselTrack"></div>
+        <button onclick="heroPrev()" aria-label="Previous image" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button onclick="heroNext()" aria-label="Next image" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
       </div>
     </div>
   </section>
@@ -461,7 +467,7 @@
             </div>
 
             <div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 flex flex-col sm:flex-row gap-6 items-center">
-              <img id="paymentQR" class="w-40 h-40 rounded-lg border border-outline-variant bg-white" src="Payment.png" alt="Payment QR Code"/>
+              <img id="paymentQR" class="w-40 h-40 rounded-lg border border-outline-variant bg-white" src="https://drive.google.com/thumbnail?id=1YB2zE17JYW81Nv0sNmoeHLMeLHCvDhvR&sz=w1000" alt="Payment QR Code"/>
               <div class="flex-1 space-y-2">
                 <p class="font-body-md text-body-md text-on-surface-variant">Scan the QR code to make a payment or use the below link <a href="https://payments.billdesk.com/bdcollect/bd/indianinstituteoftechnologydharwad/19477" target="_blank" rel="noopener" class="text-primary font-semibold underline hover:no-underline">Payment Link</a></p>
                 <p class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Rs. 1000/-</p>
@@ -575,8 +581,8 @@
           <h2 class="font-headline-lg text-headline-lg text-center uppercase">Organising Team</h2>
         </div>
         <div class="space-y-6">
-          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-start shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
-            <img class="w-24 h-24 rounded-full border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w500"/>
+          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-stretch shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
+            <img class="w-full h-48 sm:w-56 sm:h-auto rounded-lg border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w1000"/>
             <div>
               <h3 class="font-subheading text-subheading text-primary mb-1">Prof. Somasekhara Goud</h3>
               <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Chair</p>
@@ -586,8 +592,8 @@
               </a>
             </div>
           </div>
-          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-start shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
-            <img class="w-24 h-24 rounded-full border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w500"/>
+          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-stretch shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
+            <img class="w-full h-48 sm:w-56 sm:h-auto rounded-lg border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w1000"/>
             <div>
               <h3 class="font-subheading text-subheading text-primary mb-1">Prof. Ravi Chandra Dutta</h3>
               <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Co-Chair</p>
@@ -830,21 +836,28 @@
 /* ================= DATA ================= */
 const SPEAKERS = [
   {name:'Prof. Pushpavanam S', institution:'IIT Madras', bio:'Expert in flow visualization, non-linear dynamics, and modeling and simulation.',
-   photo:'https://drive.google.com/thumbnail?id=1XgOWBHtUZC4mSRTvVSoU4dD7hyooZ7H8&sz=w500'},
+   photo:'https://drive.google.com/thumbnail?id=1XgOWBHtUZC4mSRTvVSoU4dD7hyooZ7H8&sz=w1000'},
   {name:'Prof. Kirti Chandra Sahu', institution:'IIT Hyderabad', bio:'Expert in multiphase flows, flow instability, fluid dynamics, and bubbles and drops.',
-   photo:'https://drive.google.com/thumbnail?id=1joPz8xDzTKKZhts9YaqYxFIj_O6XJT1I&sz=w500'},
+   photo:'https://drive.google.com/thumbnail?id=1joPz8xDzTKKZhts9YaqYxFIj_O6XJT1I&sz=w1000'},
   {name:'Prof. Arnab Atta', institution:'IIT Kharagpur', bio:'Expert in multiphase flows, microfluidics, CFD, and process intensification.',
-   photo:'https://drive.google.com/thumbnail?id=1vo5GibhsWDjd4kPVtF1jHhI4JlKKwyh_&sz=w500', photoPosition:'center 15%'},
+   photo:'https://drive.google.com/thumbnail?id=1vo5GibhsWDjd4kPVtF1jHhI4JlKKwyh_&sz=w1000', photoPosition:'center 15%'},
   {name:'Prof. Raghavendra Gupta', institution:'IIT Guwahati', bio:'Expert in multiphase flows, microfluidics, C&EFD, and micro process engineering.',
-   photo:'https://drive.google.com/thumbnail?id=1mPxIGA1Xv1QUZXUJdezk-BgcZkeMccGi&sz=w500'},
+   photo:'https://drive.google.com/thumbnail?id=1mPxIGA1Xv1QUZXUJdezk-BgcZkeMccGi&sz=w1000'},
   {name:'Prof. Venkat Gundabala', institution:'IIT Bombay', bio:'Expert in bio-microfluidics, water-based coatings, and bio-based packing.',
-   photo:'https://drive.google.com/thumbnail?id=1xSEboLtJoybU7Wr5lR9CAgIrF10mTSTY&sz=w500', photoPosition:'center 15%'},
+   photo:'https://drive.google.com/thumbnail?id=1xSEboLtJoybU7Wr5lR9CAgIrF10mTSTY&sz=w1000', photoPosition:'center 15%'},
   {name:'Prof. Sai Phani Kumar V.', institution:'IISER Bhopal', bio:'Expert in computational catalysis and computational material science.',
-   photo:'https://drive.google.com/thumbnail?id=13MTpigIFktyIytCRU1XnY04RMUwcTv6-&sz=w500'},
+   photo:'https://drive.google.com/thumbnail?id=13MTpigIFktyIytCRU1XnY04RMUwcTv6-&sz=w1000'},
   {name:'Prof. Manish Kumar', institution:'IISc Bengaluru', bio:'Expert in theory, computation, complex fluids, soft matter, and dynamics of complex fluids.',
-   photo:'https://drive.google.com/thumbnail?id=1P78yWfieWu3-MYWX71RJiOAhLwi1fx6d&sz=w500'},
+   photo:'https://drive.google.com/thumbnail?id=1P78yWfieWu3-MYWX71RJiOAhLwi1fx6d&sz=w1000'},
   {name:'Dr. Shasank Tiwari', institution:'Shell, Bengaluru', bio:'Expert in advanced fluid dynamics and reactor modelling, computational fluid dynamics, and discrete element method.',
-   photo:'https://drive.google.com/thumbnail?id=1rGH5jOBYWGiwr0wDwOtucKnKGsbzMBlE&sz=w500'}
+   photo:'https://drive.google.com/thumbnail?id=1rGH5jOBYWGiwr0wDwOtucKnKGsbzMBlE&sz=w1000'}
+];
+
+const HERO_IMAGES = [
+  'https://drive.google.com/thumbnail?id=15EBb3pD8h-DNxfU1IbILY3K581qSU8g1&sz=w2000',
+  'https://drive.google.com/thumbnail?id=12RyF3ULSPHxsdia82Uxufw2zDfOI5uB0&sz=w1200',
+  'https://drive.google.com/thumbnail?id=1MUmHijOE0W_EoLAg9zcROjzB5do6S_V5&sz=w1200',
+  'https://drive.google.com/thumbnail?id=1e4eP1XPL8e-nflevCcqPZWWp74ciHdmV&sz=w1200'
 ];
 
 const GALLERY_ITEMS = [
@@ -856,9 +869,9 @@ const GALLERY_ITEMS = [
 /* Leadership — replace `photo: null` with an image URL once you have actual photos.
    Until then, names render with a placeholder avatar. */
 const LEADERSHIP = [
-  { name: 'Prof. Venkappaya R. Desai', role: 'Patron', title: 'Director, IIT Dharwad', photo: 'https://drive.google.com/thumbnail?id=1Bb0cZNJO5TlceJt0KUqto5hJ5dfZ1aLl&sz=w500' },
-  { name: 'Prof. Somasekhara Goud Sontti', role: 'Chair', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w500' },
-  { name: 'Prof. Ravi Chandra Dutta', role: 'Co-Chair', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w500' }
+  { name: 'Prof. Venkappaya R. Desai', role: 'Patron', title: 'Director, IIT Dharwad', photo: 'https://drive.google.com/thumbnail?id=1Bb0cZNJO5TlceJt0KUqto5hJ5dfZ1aLl&sz=w1000' },
+  { name: 'Prof. Somasekhara Goud Sontti', role: 'Chair', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w1000' },
+  { name: 'Prof. Ravi Chandra Dutta', role: 'Co-Chair', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w1000' }
 ];
 
 /* Sponsor tiers — replace `logo: null` with an image URL once you have actual logo files,
@@ -887,6 +900,31 @@ const SPONSOR_TIERS = [
       { name: 'ANRF', logo: null }
     ] }
 ];
+
+/* ================= HERO CAROUSEL ================= */
+let heroIndex = 0;
+let heroTimer = null;
+function renderHeroCarousel(){
+  document.getElementById('heroCarouselTrack').innerHTML = HERO_IMAGES.map(src => `
+    <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image:url('${src}')"></div>`).join('');
+  updateHeroCarousel();
+}
+function updateHeroCarousel(){
+  document.getElementById('heroCarouselTrack').style.transform = `translateX(-${heroIndex * 100}%)`;
+}
+function heroAdvance(step){
+  heroIndex = (heroIndex + step + HERO_IMAGES.length) % HERO_IMAGES.length;
+  updateHeroCarousel();
+}
+function heroNext(){ heroAdvance(1); startHeroAutoplay(); }
+function heroPrev(){ heroAdvance(-1); startHeroAutoplay(); }
+function startHeroAutoplay(){
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => heroAdvance(1), 4000);
+}
+function pauseHeroCarousel(){
+  clearInterval(heroTimer);
+}
 
 /* ================= RENDER ================= */
 function renderSpeakers(){
@@ -926,8 +964,8 @@ function renderSponsors(){
 
 function renderLeadership(){
   document.getElementById('leadershipGrid').innerHTML = LEADERSHIP.map(p => `
-    <div class="text-center w-40 sm:w-44">
-      <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-secondary-fixed mx-auto mb-4 overflow-hidden bg-surface-container-low flex items-center justify-center">
+    <div class="text-center w-64 sm:w-72">
+      <div class="w-full h-64 sm:h-72 rounded-xl border-4 border-secondary-fixed mx-auto mb-4 overflow-hidden bg-surface-container-low flex items-center justify-center">
         ${p.photo
           ? `<img src="${p.photo}" alt="${p.name}" class="w-full h-full object-cover"/>`
           : `<span class="material-symbols-outlined text-5xl text-outline">person</span>`
@@ -1200,6 +1238,8 @@ function showSuccess(ref){
 }
 
 /* ================= INIT ================= */
+renderHeroCarousel();
+startHeroAutoplay();
 renderSpeakers();
 renderGallery();
 renderSponsors();
