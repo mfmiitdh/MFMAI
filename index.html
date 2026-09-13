@@ -155,6 +155,51 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+    .theme-card {
+        opacity: 0;
+        transform: scale(0.8) translateY(12px);
+    }
+    .theme-card.pop-in {
+        animation: themeCardPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    @keyframes themeCardPop {
+        0% { opacity: 0; transform: scale(0.8) translateY(12px); }
+        60% { opacity: 1; transform: scale(1.05) translateY(-2px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .theme-card.settled {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    .theme-card.pulsing {
+        animation: themeCardPulse 0.9s ease-in-out;
+    }
+    @keyframes themeCardPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.07); }
+    }
+    .btn-register-highlight {
+        position: relative;
+        isolation: isolate;
+        animation: ctaPop 2.2s ease-in-out infinite;
+    }
+    .btn-register-highlight::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        z-index: -1;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, #fed65b, #b5c4ff);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+    @keyframes ctaPop {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(254, 214, 91, 0); }
+        50% { transform: scale(1.06); box-shadow: 0 0 18px rgba(254, 214, 91, 0.55); }
+    }
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[120px]">
@@ -175,7 +220,7 @@
       <a data-nav="sponsors" href="#" onclick="return handleNav(event,'sponsors')" class="font-label-caps text-label-caps py-2 transition-colors">Sponsors</a>
     </nav>
 
-    <button onclick="goTo('registration')" class="hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">
+    <button onclick="goTo('registration')" class="btn-register-highlight hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">
       Register Now
     </button>
 
@@ -191,7 +236,7 @@
     <a data-nav="about" href="#" onclick="closeMobileMenu(); return handleNav(event,'about')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">About</a>
     <a data-nav="gallery" href="#" onclick="closeMobileMenu(); return handleNav(event,'gallery')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Gallery</a>
     <a data-nav="sponsors" href="#" onclick="closeMobileMenu(); return handleNav(event,'sponsors')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Sponsors</a>
-    <button onclick="closeMobileMenu(); goTo('registration')" class="mt-2 bg-primary text-on-primary font-label-caps text-label-caps px-4 py-3 rounded shadow-sm text-center">Register Now</button>
+    <button onclick="closeMobileMenu(); goTo('registration')" class="btn-register-highlight mt-2 bg-primary text-on-primary font-label-caps text-label-caps px-4 py-3 rounded shadow-sm text-center">Register Now</button>
   </div>
 </header>
 
@@ -207,28 +252,28 @@
 <!-- ========================= HOME PAGE ========================= -->
 <section id="page-home" class="page active">
   <!-- Hero Section -->
-  <section class="py-section-padding-desktop px-gutter relative overflow-hidden bg-surface-container-lowest border-b border-outline-variant">
+  <section class="pt-6 pb-section-padding-desktop px-gutter relative overflow-hidden bg-surface-container-lowest border-b border-outline-variant">
     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#002068 1px, transparent 1px); background-size: 20px 20px;"></div>
-    <div class="max-w-container-max-width mx-auto flex flex-col gap-8 relative z-10">
+    <div class="max-w-container-max-width mx-auto flex flex-col gap-6 relative z-10">
       <div class="w-full">
-        <div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-6 font-label-caps text-label-caps">
+        <div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-3 font-label-caps text-label-caps">
           <span class="material-symbols-outlined text-sm">calendar_month</span>
           December 3-4, 2026
         </div>
-        <h1 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">
-          ANRF NATIONAL SYMPOSIUM <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-surface-tint">MULTIPHASE FLOW MODELING, MICROFLUIDICS, CFD, ADVANCED MATERIALS AND AI-DRIVEN SIMULATION</span>
+        <h1 class="mb-4 leading-tight">
+          <span class="block font-headline-lg text-headline-lg text-on-surface-variant mb-1">ANRF NATIONAL SYMPOSIUM ON</span>
+          <span class="block font-headline-xl text-headline-xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-surface-tint">MULTIPHASE FLOW MODELING, MICROFLUIDICS, CFD, ADVANCED MATERIALS AND AI-DRIVEN SIMULATION</span>
         </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
           Microfluidics, CFD, Advanced Materials and AI-Driven Simulation. Bridging the gap between fundamental science and industrial innovation.
         </p>
         <div class="flex gap-4 flex-wrap">
-          <button onclick="goTo('registration')" class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps hover:shadow-lg transition-shadow">Register Now</button>
+          <button onclick="goTo('registration')" class="btn-register-highlight bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps hover:shadow-lg transition-shadow">Register Now</button>
           <button onclick="openBrochure()" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Download Brochure</button>
           <button onclick="openAbstractTemplate()" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Abstract Template</button>
         </div>
       </div>
-      <div class="relative w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden shadow-sm border border-outline-variant group" id="heroCarousel" onmouseenter="pauseHeroCarousel()" onmouseleave="startHeroAutoplay()">
+      <div class="relative w-full aspect-[3/1] rounded-xl overflow-hidden shadow-sm border border-outline-variant bg-surface-container-lowest group" id="heroCarousel" onmouseenter="pauseHeroCarousel()" onmouseleave="startHeroAutoplay()">
         <div class="flex h-full transition-transform duration-700 ease-in-out" id="heroCarouselTrack"></div>
         <button onclick="heroPrev()" aria-label="Previous image" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60">
           <span class="material-symbols-outlined">chevron_left</span>
@@ -267,26 +312,26 @@
           </button>
         </div>
       </div>
-      <div class="md:col-span-7 grid grid-cols-2 gap-6">
-        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+      <div class="md:col-span-7 grid grid-cols-2 gap-6" id="themeCardsGrid">
+        <div class="theme-card bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
           <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">water_drop</span>
           <h3 class="font-subheading text-subheading text-on-surface mb-2">Multiphase Flows</h3>
           <p class="font-body-md text-body-md text-on-surface-variant">VOF, Level-Set, Eulerian-Eulerian, Lattice-Boltzmann.</p>
         </div>
-        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+        <div class="theme-card bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
           <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">science</span>
           <h3 class="font-subheading text-subheading text-on-surface mb-2">Microfluidics</h3>
           <p class="font-body-md text-body-md text-on-surface-variant">Droplet &amp; digital microfluidics, lab-on-chip diagnostics.</p>
         </div>
-        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+        <div class="theme-card bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
           <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">computer</span>
           <h3 class="font-subheading text-subheading text-on-surface mb-2">CFD &amp; Multiphysics</h3>
           <p class="font-body-md text-body-md text-on-surface-variant">Reactive, thermal &amp; interfacial transport modeling.</p>
         </div>
-        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
-          <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">memory</span>
-          <h3 class="font-subheading text-subheading text-on-surface mb-2">AI/ML Simulation</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant">Surrogate modeling &amp; inverse design for advanced materials.</p>
+        <div class="theme-card bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-4xl text-surface-tint mb-4">biotech</span>
+          <h3 class="font-subheading text-subheading text-on-surface mb-2">Advanced Material Design</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Molecular dynamics &amp; AI/ML-driven design of advanced materials.</p>
         </div>
       </div>
     </div>
@@ -855,9 +900,16 @@ const SPEAKERS = [
 
 const HERO_IMAGES = [
   'https://drive.google.com/thumbnail?id=15EBb3pD8h-DNxfU1IbILY3K581qSU8g1&sz=w2000',
-  'https://drive.google.com/thumbnail?id=12RyF3ULSPHxsdia82Uxufw2zDfOI5uB0&sz=w1200',
-  'https://drive.google.com/thumbnail?id=1MUmHijOE0W_EoLAg9zcROjzB5do6S_V5&sz=w1200',
-  'https://drive.google.com/thumbnail?id=1e4eP1XPL8e-nflevCcqPZWWp74ciHdmV&sz=w1200'
+  'https://drive.google.com/thumbnail?id=1AN6rPG7vyVMAao-afGYsRP8vgVEEkGT3&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1e4LGArbUwWTwrONIza3GHHP7wEfWOSbn&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1SSkb-E14b5VvQBCDlAY8BymWB_0MVkCy&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1NFXxWY1uQ-iGHecVlJ9W3uOvmdVYXEXP&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1x-ucWsa8ImCtt35BtWJvzSWK-N1FQBJU&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1RwbwxNNNuKhFEqvf-jb1yYEw7wQ5cPAB&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1OWaouoZyGpUMy6M5IaZCVRC73asXvtvO&sz=w2000',
+  'https://drive.google.com/thumbnail?id=14GP3Zxs8ld4qPnieuDRjkS_LGUz0Yt1e&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1WpUJaHDrZOOmewVFU5j_Zd5TbLIsWfJz&sz=w2000',
+  'https://drive.google.com/thumbnail?id=1qt6E3Uz95412PbtpM_5dgu9FQe9JmYwp&sz=w2000'
 ];
 
 const GALLERY_ITEMS = [
@@ -901,19 +953,36 @@ const SPONSOR_TIERS = [
     ] }
 ];
 
-/* ================= HERO CAROUSEL ================= */
-let heroIndex = 0;
+/* ================= HERO CAROUSEL (seamless cyclic loop) ================= */
+// The track carries a clone of the last image before the real set and a clone
+// of the first image after it, so wrapping past either end keeps sliding in
+// the same direction instead of jumping backward across the whole strip.
+let heroPosition = 1; // 1..HERO_IMAGES.length are the real slides
 let heroTimer = null;
 function renderHeroCarousel(){
-  document.getElementById('heroCarouselTrack').innerHTML = HERO_IMAGES.map(src => `
-    <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image:url('${src}')"></div>`).join('');
-  updateHeroCarousel();
+  const track = document.getElementById('heroCarouselTrack');
+  const slides = [HERO_IMAGES[HERO_IMAGES.length - 1], ...HERO_IMAGES, HERO_IMAGES[0]];
+  track.innerHTML = slides.map(src => `
+    <div class="w-full h-full flex-shrink-0 bg-contain bg-no-repeat bg-center" style="background-image:url('${src}')"></div>`).join('');
+  heroPosition = 1;
+  track.style.transform = `translateX(-${heroPosition * 100}%)`;
+  track.addEventListener('transitionend', (e) => {
+    if(e.propertyName !== 'transform') return;
+    const total = HERO_IMAGES.length;
+    if(heroPosition === total + 1 || heroPosition === 0){
+      heroPosition = heroPosition === 0 ? total : 1;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${heroPosition * 100}%)`;
+      void track.offsetWidth; // force reflow before re-enabling the transition
+      track.style.transition = '';
+    }
+  });
 }
 function updateHeroCarousel(){
-  document.getElementById('heroCarouselTrack').style.transform = `translateX(-${heroIndex * 100}%)`;
+  document.getElementById('heroCarouselTrack').style.transform = `translateX(-${heroPosition * 100}%)`;
 }
 function heroAdvance(step){
-  heroIndex = (heroIndex + step + HERO_IMAGES.length) % HERO_IMAGES.length;
+  heroPosition += step;
   updateHeroCarousel();
 }
 function heroNext(){ heroAdvance(1); startHeroAutoplay(); }
@@ -924,6 +993,71 @@ function startHeroAutoplay(){
 }
 function pauseHeroCarousel(){
   clearInterval(heroTimer);
+}
+
+/* ================= THEME CARDS POP-IN + SEQUENTIAL CLOCKWISE PULSE ================= */
+function initThemeCardAnimation(){
+  const grid = document.getElementById('themeCardsGrid');
+  if(!grid) return;
+  const cards = Array.from(grid.querySelectorAll('.theme-card'));
+  // grid is 2x2 (0=top-left, 1=top-right, 2=bottom-left, 3=bottom-right);
+  // walk them clockwise: top-left -> top-right -> bottom-right -> bottom-left
+  const clockwiseOrder = [cards[0], cards[1], cards[3], cards[2]];
+
+  let popped = false;
+  let sequenceRunning = false;
+  let sequenceIndex = 0;
+  let sequenceTimer = null;
+
+  function pulseNext(){
+    if(!sequenceRunning) return;
+    const card = clockwiseOrder[sequenceIndex % clockwiseOrder.length];
+    sequenceIndex++;
+    card.classList.add('pulsing');
+    card.addEventListener('animationend', function handler(e){
+      if(e.animationName !== 'themeCardPulse') return;
+      card.classList.remove('pulsing');
+      card.removeEventListener('animationend', handler);
+      if(sequenceRunning) sequenceTimer = setTimeout(pulseNext, 250);
+    });
+  }
+  function startSequence(){
+    if(sequenceRunning) return;
+    sequenceRunning = true;
+    pulseNext();
+  }
+  function stopSequence(){
+    sequenceRunning = false;
+    clearTimeout(sequenceTimer);
+  }
+
+  function popIn(){
+    popped = true;
+    clockwiseOrder.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add('pop-in');
+        card.addEventListener('animationend', function handler(e){
+          if(e.animationName !== 'themeCardPop') return;
+          card.classList.remove('pop-in');
+          card.classList.add('settled');
+          card.removeEventListener('animationend', handler);
+          if(i === clockwiseOrder.length - 1) startSequence();
+        });
+      }, i * 150);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        if(!popped) popIn();
+        else startSequence();
+      } else {
+        stopSequence();
+      }
+    });
+  }, { threshold: 0.2 });
+  observer.observe(grid);
 }
 
 /* ================= RENDER ================= */
@@ -1240,6 +1374,7 @@ function showSuccess(ref){
 /* ================= INIT ================= */
 renderHeroCarousel();
 startHeroAutoplay();
+initThemeCardAnimation();
 renderSpeakers();
 renderGallery();
 renderSponsors();
