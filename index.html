@@ -218,6 +218,7 @@
       <a data-nav="registration" href="#" onclick="return handleNav(event,'registration')" class="font-label-caps text-label-caps py-2 transition-colors">Registration</a>
       <a data-nav="gallery" href="#" onclick="return handleNav(event,'gallery')" class="font-label-caps text-label-caps py-2 transition-colors">Gallery</a>
       <a data-nav="sponsors" href="#" onclick="return handleNav(event,'sponsors')" class="font-label-caps text-label-caps py-2 transition-colors">Sponsors</a>
+      <a data-nav="travel" href="#" onclick="return handleNav(event,'travel')" class="font-label-caps text-label-caps py-2 transition-colors">Travel</a>
     </nav>
 
     <button onclick="goTo('registration')" class="btn-register-highlight hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">
@@ -236,6 +237,7 @@
     <a data-nav="registration" href="#" onclick="closeMobileMenu(); return handleNav(event,'registration')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Registration</a>
     <a data-nav="gallery" href="#" onclick="closeMobileMenu(); return handleNav(event,'gallery')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Gallery</a>
     <a data-nav="sponsors" href="#" onclick="closeMobileMenu(); return handleNav(event,'sponsors')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Sponsors</a>
+    <a data-nav="travel" href="#" onclick="closeMobileMenu(); return handleNav(event,'travel')" class="font-label-caps text-label-caps py-3 px-2 rounded transition-colors">Travel</a>
     <button onclick="closeMobileMenu(); goTo('registration')" class="btn-register-highlight mt-2 bg-primary text-on-primary font-label-caps text-label-caps px-4 py-3 rounded shadow-sm text-center">Register Now</button>
   </div>
 </header>
@@ -575,131 +577,189 @@
 
 <!-- ========================= ABOUT PAGE ========================= -->
 <section id="page-about" class="page">
-  <main class="max-w-container-max-width mx-auto px-gutter py-section-padding-mobile md:py-section-padding-desktop space-y-24 min-h-screen">
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-      <div class="space-y-8">
-        <h1 class="font-headline-xl text-headline-xl text-primary">About IIT DHARWAD</h1>
-        <div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
-          <p>IIT Dharwad is an Institute of National Importance established in 2016 by the Ministry of Education, Government of India. Located in the serene and historic city of Dharwad, Karnataka, the institution is committed to excellence in teaching, research, and innovation across diverse disciplines of science and engineering.</p>
-          <div class="flex items-start gap-4">
-            <img class="w-24 h-24 rounded-full object-cover shadow-sm border border-outline-variant flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBalkUdsappSbI1UbKHpkppW92jr7ABsRgt8S57voEl_HYfSjWiDENJgsjTLnKdGlGXT7yj8QyV01f8I2L6AeXSM5mN0Qxe43Z2a5bD7dzmah4JuaCxnN3gvAl2TD7IWipi7stEXIhiyFD1UE1znyUAvcu1HYYO6o2g77PfPOxZDriBo20ggb3ALMEJN-VkODpz-6mhpncPsH-5aBnUc9kZmuY5YbNAz9UGKp_jgpkugSb9LmaDEImr"/>
-            <p>With a vibrant and growing campus spread across a 470-acre permanent campus, IIT Dharwad offers a dynamic academic environment supported by state-of-the-art laboratories, advanced research facilities, and a collaborative culture. The institute fosters interdisciplinary learning and emphasizes both foundational knowledge and emerging technologies to address real-world challenges.</p>
+  <main class="max-w-container-max-width mx-auto px-gutter py-section-padding-mobile md:py-section-padding-desktop min-h-screen">
+    <div class="flex flex-col gap-8">
+      <!-- About the Symposium -->
+      <section class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 shadow-sm flex flex-col">
+        <div class="flex items-center gap-3 mb-6 border-b border-outline-variant/30 pb-4">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">explore</span>
           </div>
-          <div class="flex items-start gap-4">
-            <img class="w-24 h-24 rounded-full object-cover shadow-sm border border-outline-variant flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtaWwN2CR6jQdV_djW6RpUcPB03P6Tr9DCzZKLv4yTSvJD5NfTwaX9MKfMtd4I7aOCEc3yF4mAzG9LiCmxK_GEBBga_9wniL3WrutD9Jzp8mxadAktoEfMHao8ahEXtrDWmfHYBupG3ZtZskqips5AghP1oEiZBOAxLBSp8pJQiwR4vqq-vk9l6aZhmf5qDpcmn1gw1mABXsPKne83tuyT6EnFvAIQ-mRFor0y_EvhIMCJqzgTML9f"/>
-            <p>Set amid the Western Ghats, Dharwad offers a pleasant climate and is well-connected to road, rail, and air through nearby Hubballi. IIT Dharwad continues to attract talented students, researchers, and faculty across the country and is steadily growing into a hub of academic and research excellence.</p>
-          </div>
+          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase">About the Symposium</h2>
         </div>
-        <div class="bg-surface-container-low border border-primary/10 rounded-xl p-8 relative overflow-hidden shadow-sm">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full -mr-16 -mt-16"></div>
-          <div class="relative z-10 flex gap-6 items-start">
-            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-              <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">science</span>
-            </div>
-            <div>
-              <h3 class="font-subheading text-subheading text-primary mb-3 uppercase tracking-wider">Chemical Engineering Department</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">The Department of Chemical Engineering at IIT Dharwad was established with a vision to create a center of excellence in education and research in chemical and allied engineering fields. The department offers undergraduate (BTech) and postgraduate (Ph.D.) programs, with a strong emphasis on core chemical engineering principles, computational tools, and interdisciplinary applications.</p>
-            </div>
-          </div>
+        <div class="space-y-4 text-on-surface-variant font-body-md text-body-md text-justify">
+          <p>Multiphase flow, microfluidics, advanced materials and CFD sit at the heart of process, energy, biomedical and electronics engineering– from droplet-based synthesis and rainfall physics to lab-on-chip diagnostics. MFM-AI 2026 brings together CFD modelers, experimentalists, materials scientists and data scientists on a single national platform, pairing rigorous science with hands-on, industry-scale simulation training</p>
+          <p>Multiphase flows and microfluidic technologies have applications in energy, biomedical engineering, drug delivery, chemical processing, environmental technologies, and advanced materials. Molecular dynamics and Monte Carlo simulations enable the design of advanced materials for drug delivery, gas separation, energy storage, catalysts, and sustainable technologies. With CFD, performance computing, machine learning, and AI offers opportunities for multiscale modeling, process optimization, and accelerated materials discovery.</p>
+          <p>The symposium will feature invited talks, technical sessions, and interactive discussions involving academia, industry, and research institutions. It aims to strengthen research networks and promote interdisciplinary collaboration toward innovative and sustainable technologies through modeling, simulation, experimentation, advanced materials, and AI-driven approaches.</p>
         </div>
-      </div>
-      <div class="space-y-8">
-        <div class="space-y-6 text-on-surface-variant font-body-md text-body-md">
+      </section>
+
+      <!-- Chemical Engineering Department -->
+      <section class="bg-surface-container-low border border-primary/10 rounded-xl p-8 relative overflow-hidden shadow-sm flex flex-col">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full -mr-16 -mt-16"></div>
+        <div class="relative z-10 flex items-center gap-3 mb-6 border-b border-outline-variant/30 pb-4">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">science</span>
+          </div>
+          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase">Chemical Engineering</h2>
+        </div>
+        <div class="relative z-10 space-y-4 text-on-surface-variant font-body-md text-body-md text-justify">
+          <p>The Department of Chemical Engineering at IIT Dharwad was established with a vision to create a center of excellence in education and research in chemical and allied engineering fields. The department offers undergraduate (BTech) and postgraduate (Ph.D.) programs, with a strong emphasis on core chemical engineering principles, computational tools, and interdisciplinary applications.</p>
           <p>Our faculty is engaged in high-quality research in areas such as colloids and interfaces, soft matter, energy systems catalyst, process modeling and simulation, electrochemical systems, reaction engineering, and materials science. The department actively collaborates with national and international institutes, and encourages innovation and entrepreneurship among students. With a growing infrastructure that includes modern laboratories, advanced research facilities, and a student-focused learning environment, the department aims to train the next generation of engineers and researchers to address the technological challenges of the future.</p>
         </div>
-        <div>
-          <h2 class="font-headline-lg text-headline-lg text-secondary mb-4 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">explore</span>
-            About the Symposium
-          </h2>
-          <div class="space-y-4 text-on-surface-variant font-body-md text-body-md">
-            <p>Multiphase flow, microfluidics, advanced materials and CFD sit at the heart of process, energy, biomedical and electronics engineering– from droplet-based synthesis and rainfall physics to lab-on-chip diagnostics. MFM-AI 2026 brings together CFD modelers, experimentalists, materials scientists and data scientists on a single national platform, pairing rigorous science with hands-on, industry-scale simulation training</p>
-            <p>Multiphase flows and microfluidic technologies have applications in energy, biomedical engineering, drug delivery, chemical processing, environmental technologies, and advanced materials. Molecular dynamics and Monte Carlo simulations enable the design of advanced materials for drug delivery, gas separation, energy storage, catalysts, and sustainable technologies. With CFD, performance computing, machine learning, and AI offers opportunities for multiscale modeling, process optimization, and accelerated materials discovery.</p>
-            <p>The symposium will feature invited talks, technical sessions, and interactive discussions involving academia, industry, and research institutions. It aims to strengthen research networks and promote interdisciplinary collaboration toward innovative and sustainable technologies through modeling, simulation, experimentation, advanced materials, and AI-driven approaches.</p>
+      </section>
+
+      <!-- Organising Team -->
+      <section class="bg-primary rounded-xl p-8 text-on-primary flex flex-col">
+        <div class="flex items-center justify-center gap-3 mb-8 border-b border-on-primary/20 pb-4">
+          <span class="material-symbols-outlined text-3xl text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">groups</span>
+          <h2 class="font-headline-lg text-headline-lg uppercase text-center">Organising Team</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-stretch shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
+            
+              <img class="w-full h-56 sm:w-44 sm:h-auto rounded-lg border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w1000" alt="Prof. Somasekhara Goud"/>
+            <div>
+              <h3 class="font-subheading text-body-lg font-bold text-primary leading-snug">Prof. Somasekhara Goud</h3>
+              <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Convenor</p>
+            <p class="font-body-md text-sm text-on-surface-variant mb-3 text-justify">His expertise spans multiphase flow, CFD, microfluidics, non-Newtonian flows, and slurry transport, with research focused on droplet/bubble dynamics, emulsions, microfluidic separation, and AI/ML-based simulations.</p>
+            <div class="flex flex-col gap-1">
+              <a href="mailto:somasekhar.sonti@iitdh.ac.in" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors break-all">
+                <span class="material-symbols-outlined text-base">mail</span> somasekhar.sonti@iitdh.ac.in
+              </a>
+              <a href="https://mfmlab.iitdh.ac.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined text-base">language</span> Visit Website
+              </a>
+            </div>
+            </div>
           </div>
+          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-stretch shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
+            
+              <img class="w-full h-56 sm:w-44 sm:h-auto rounded-lg border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w1000" alt="Prof. Ravi Chandra Dutta"/>
+            <div>
+              <h3 class="font-subheading text-body-lg font-bold text-primary leading-snug">Prof. Ravi Chandra Dutta</h3>
+              <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Co-Convenor</p>
+            <p class="font-body-md text-sm text-on-surface-variant mb-3 text-justify">His research focuses on AI-driven materials design, gas separation membranes, electrified interfaces, and MOF-based drug delivery, integrating molecular simulations, theory, and machine learning for advanced material development.</p>
+            <div class="flex flex-col gap-1">
+              <a href="mailto:ravicd@iitdh.ac.in" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined text-base">mail</span> ravicd@iitdh.ac.in
+              </a>
+              <a href="https://sites.google.com/iitdh.ac.in/ravichandard/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined text-base">language</span> Visit Website
+              </a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supporting Team -->
+      <section class="bg-surface-container-low border border-primary/10 rounded-xl p-8 shadow-sm">
+        <div class="flex items-center justify-center gap-3 mb-8 border-b border-outline-variant/30 pb-4">
+          <span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary uppercase text-center">Supporting Team</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="supportTeamGrid"></div>
+      </section>
+    </div>
+  </main>
+</section>
+
+<!-- ========================= TRAVEL PAGE ========================= -->
+<section id="page-travel" class="page">
+  <!-- Hero -->
+  <section class="bg-primary py-16 px-gutter relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <div class="max-w-container-max-width mx-auto text-center relative z-10">
+      <h1 class="font-headline-xl text-headline-xl text-on-primary mb-2">Travel &amp; Venue</h1>
+      <p class="font-body-lg text-body-lg text-primary-fixed mb-2">Plan your visit to Dharwad – the Vidya Kashi of Karnataka.</p>
+      <p class="font-label-caps text-label-caps text-secondary-fixed">
+        <button onclick="goTo('home')" class="hover:underline">Home</button> &gt; Travel
+      </p>
+    </div>
+  </section>
+
+  <main class="max-w-container-max-width mx-auto px-gutter py-section-padding-mobile md:py-section-padding-desktop space-y-20">
+
+    <!-- The Venue -->
+    <section>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8 border-l-4 border-secondary pl-4">The Venue</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8">
+        <div>
+          <h3 class="font-subheading text-subheading text-primary mb-3">IIT Dharwad – Permanent Campus</h3>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-4 text-justify">
+            The symposium will be hosted at the permanent campus of the Indian Institute of Technology Dharwad, situated near Chikkamalligawad village, Dharwad. The campus offers state-of-the-art facilities for academic interaction and collaboration.
+          </p>
+          <div class="flex items-start gap-3 text-on-surface">
+            <span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">location_on</span>
+            <span class="font-body-md text-body-md">IIT Dharwad, Chikkamalligawad, Dharwad, Karnataka – 580011</span>
+          </div>
+          <div class="flex items-start gap-3 text-on-surface mt-2">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            <span class="font-body-md text-body-md">December 3-4, 2026</span>
+          </div>
+        </div>
+        <img src="https://drive.google.com/thumbnail?id=12RyF3ULSPHxsdia82Uxufw2zDfOI5uB0&sz=w1200" alt="IIT Dharwad Campus" class="rounded-xl shadow-sm border border-outline-variant w-full h-72 object-cover"/>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30757.024697183064!2d74.94863074999999!3d15.50442455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf32db0fffffff%3A0x41e1ca5b252a94d!2sIndian%20Institute%20of%20Technology%20Dharwad!5e0!3m2!1sen!2sin!4v1715941580947!5m2!1sen!2sin"
+        class="w-full h-[400px] rounded-xl border border-outline-variant shadow-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- How to Reach -->
+    <section>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8 border-l-4 border-secondary pl-4">How to Reach IIT Dharwad</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 border-t-4 border-t-primary hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight</span>
+          </div>
+          <h3 class="font-subheading text-subheading text-primary mb-2">By Air</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-3 text-justify">The nearest airports are <strong class="text-on-surface">Hubballi (HBX, ~25 km)</strong> and <strong class="text-on-surface">Belagavi (IXG, ~65 km)</strong>, with regular flights from Bengaluru, Mumbai, Delhi, Hyderabad, Chennai, and Ahmedabad.</p>
+          <p class="font-label-caps text-label-caps text-secondary mb-1">Nearest International Airports</p>
+          <ul class="font-body-md text-sm text-on-surface-variant space-y-1">
+            <li>• Goa International Airport (~200 km)</li>
+            <li>• Kempegowda International Airport, Bengaluru (~430 km)</li>
+            <li>• Mumbai International Airport (~580 km)</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 border-t-4 border-t-secondary hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">train</span>
+          </div>
+          <h3 class="font-subheading text-subheading text-primary mb-2">By Rail</h3>
+          <ul class="font-body-md text-body-md text-on-surface-variant space-y-1 mb-3">
+            <li>• Dharwad Railway Station (DWR) – ~10 km</li>
+            <li>• SSS Hubballi Junction (UBL) – ~35 km</li>
+          </ul>
+          <p class="font-body-md text-body-md text-on-surface-variant text-justify">Well connected to Bengaluru, Mumbai, Goa, Delhi, Chennai, Hyderabad, and Kolkata.</p>
+        </div>
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 border-t-4 border-t-tertiary-container hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+          </div>
+          <h3 class="font-subheading text-subheading text-primary mb-2">By Road</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-3 text-justify">IIT Dharwad lies on NH-4 (Bengaluru–Pune highway) and is accessible by bus, taxi, or private vehicle. Travel time from Bengaluru is around 8-9 hours. KSRTC and private buses operate frequently.</p>
+          <p class="font-body-md text-body-md text-on-surface-variant text-justify">Local transport includes autos, taxis, and BRTS "Chigari" buses.</p>
         </div>
       </div>
     </section>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <section class="lg:col-span-7 bg-primary rounded-xl p-8 text-on-primary">
-        <div class="flex items-center justify-center gap-3 mb-8 border-b border-on-primary/20 pb-4">
-          <span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">groups</span>
-          <h2 class="font-headline-lg text-headline-lg text-center uppercase">Organising Team</h2>
-        </div>
-        <div class="space-y-6">
-          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-stretch shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
-            <img class="w-full h-48 sm:w-56 sm:h-auto rounded-lg border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w1000"/>
-            <div>
-              <h3 class="font-subheading text-subheading text-primary mb-1">Prof. Somasekhara Goud</h3>
-              <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Convenor</p>
-              <p class="font-body-md text-body-md text-on-surface-variant mb-3">His expertise spans multiphase flow, CFD, microfluidics, non-Newtonian flows, and slurry transport, with research focused on droplet/bubble dynamics, emulsions, microfluidic separation, and AI/ML-based simulations.</p>
-              <div class="flex flex-wrap items-center gap-x-5 gap-y-1">
-                <a href="mailto:somasekhar.sonti@iitdh.ac.in" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
-                  <span class="material-symbols-outlined text-base">mail</span> somasekhar.sonti@iitdh.ac.in
-                </a>
-                <a href="https://mfmlab.iitdh.ac.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
-                  <span class="material-symbols-outlined text-base">language</span> Visit Website
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="bg-surface rounded-lg p-6 text-on-surface flex flex-col sm:flex-row gap-6 items-stretch shadow-md hover:shadow-lg transition-shadow border border-outline-variant">
-            <img class="w-full h-48 sm:w-56 sm:h-auto rounded-lg border-2 border-secondary object-cover flex-shrink-0" src="https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w1000"/>
-            <div>
-              <h3 class="font-subheading text-subheading text-primary mb-1">Prof. Ravi Chandra Dutta</h3>
-              <p class="font-label-caps text-label-caps text-secondary font-bold mb-3">Organizing Co-Convenor</p>
-              <p class="font-body-md text-body-md text-on-surface-variant mb-3">His research focuses on AI-driven materials design, gas separation membranes, electrified interfaces, and MOF-based drug delivery, integrating molecular simulations, theory, and machine learning for advanced material development.</p>
-              <div class="flex flex-wrap items-center gap-x-5 gap-y-1">
-                <a href="mailto:ravicd@iitdh.ac.in" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
-                  <span class="material-symbols-outlined text-base">mail</span> ravicd@iitdh.ac.in
-                </a>
-                <a href="https://sites.google.com/iitdh.ac.in/ravichandard/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-body-md text-sm text-primary hover:text-secondary transition-colors">
-                  <span class="material-symbols-outlined text-base">language</span> Visit Website
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="lg:col-span-5 bg-surface-container-low border border-primary/10 rounded-xl overflow-hidden shadow-sm flex flex-col">
-        <div class="bg-secondary p-6 flex items-center justify-center gap-3">
-          <span class="material-symbols-outlined text-3xl text-on-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
-          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-secondary text-center uppercase">How to Reach IIT Dharwad</h2>
-        </div>
-        <div class="p-8 flex-grow space-y-6">
-          <p class="font-subheading text-subheading text-primary font-bold">IIT DHARWAD is well connected by air, rail, and road:</p>
-          <ul class="space-y-6">
-            <li class="flex gap-4 items-start">
-              <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight</span>
-              </div>
-              <div>
-                <h4 class="font-subheading text-subheading text-primary mb-1">By Air:</h4>
-                <p class="font-body-md text-body-md text-on-surface-variant">The nearest airports are Hubballi (HBX, ~25 km) and Belagavi (IXG, ~65 km), with regular flights from Bengaluru, Mumbai, Delhi, Hyderabad, Chennai, and Ahmedabad.</p>
-              </div>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">train</span>
-              </div>
-              <div>
-                <h4 class="font-subheading text-subheading text-primary mb-1">By Rail:</h4>
-                <p class="font-body-md text-body-md text-on-surface-variant">Dharwad Station (~10 km) and Hubballi Junction (~35 km) offer excellent rail connectivity.</p>
-              </div>
-            </li>
-            <li class="flex gap-4 items-start">
-              <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
-              </div>
-              <div>
-                <h4 class="font-subheading text-subheading text-primary mb-1">By Road:</h4>
-                <p class="font-body-md text-body-md text-on-surface-variant">IIT Dharwad lies on NH-4 (Bengaluru Pune highway) and is accessible by bus, taxi, or private vehicle. Travel time from Bengaluru is around 8-9 hours.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
+
+    <!-- About IIT Dharwad -->
+    <section class="bg-surface-container-low border border-primary/10 rounded-xl p-8 md:p-10">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8 border-l-4 border-secondary pl-4">About IIT Dharwad</h2>
+      <div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg text-justify">
+        <p>IIT Dharwad is an Institute of National Importance established in 2016 by the Ministry of Education, Government of India. Located in the historic city of Dharwad, Karnataka, the institute is committed to excellence in teaching, research, and innovation across diverse disciplines of science and engineering. With a vibrant and growing 470-acre permanent campus, IIT Dharwad provides a dynamic academic environment supported by state-of-the-art laboratories, advanced research facilities, and a collaborative culture. The institute promotes interdisciplinary learning, combining strong foundational knowledge with emerging technologies to address contemporary and real-world challenges.</p>
+        <p>Situated in the scenic region of Karnataka near the Western Ghats, Dharwad offers a pleasant climate and excellent connectivity by road, rail, and air through nearby Hubballi. IIT Dharwad continues to attract talented students, researchers, and faculty from across the country and is steadily developing into a prominent centre for academic, scientific, and technological excellence. Through its emphasis on research, innovation, and interdisciplinary collaboration, the institute is contributing to the advancement of knowledge and the development of solutions to societal and industrial challenges.</p>
+      </div>
+    </section>
+
+    <!-- Places to Visit Nearby -->
+    <section>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8 border-l-4 border-secondary pl-4">Places to Visit Nearby</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="nearbyGrid"></div>
+    </section>
+
   </main>
 </section>
 
@@ -930,6 +990,28 @@ const GALLERY_ITEMS = [
   {title:'Administration Block', category:'Campus Architecture', img:'https://drive.google.com/thumbnail?id=12RyF3ULSPHxsdia82Uxufw2zDfOI5uB0&sz=w1200', caption:'The Administration Block at IIT Dharwad permanent campus.'},
   {title:'Central Learning Theatre', category:'Campus Architecture', img:'https://drive.google.com/thumbnail?id=1MUmHijOE0W_EoLAg9zcROjzB5do6S_V5&sz=w1200', caption:'The Central Learning Theatre at IIT Dharwad permanent campus.'},
   {title:'Knowledge Resource and Data Centre', category:'Campus Architecture', img:'https://drive.google.com/thumbnail?id=1e4eP1XPL8e-nflevCcqPZWWp74ciHdmV&sz=w1200', caption:'The Knowledge Resource and Data Centre at IIT Dharwad permanent campus.'}
+];
+
+/* Nearby places (from Travel/Travel_guide.docx), ordered by distance from IIT Dharwad.
+   `img: null` falls back to a placeholder icon. */
+const NEARBY_PLACES = [
+  { name: 'Dandeli', distance: '60 km', desc: 'Wildlife, river rafting, and water sports.', icon: 'forest', img: 'https://drive.google.com/thumbnail?id=1M7miAFyUayte0jRqkzZFpTT8WdbX-_oR&sz=w1000' },
+  { name: 'Badami', distance: '120 km', desc: 'Ancient cave temples.', icon: 'temple_hindu', img: 'https://drive.google.com/thumbnail?id=1oxjkktj1icCgqUCjp6-qs8jHktx-41_C&sz=w1000' },
+  { name: 'Amboli', distance: '145 km', desc: 'Thick forest, waterfalls, and beautiful natural landscape.', icon: 'landscape', img: 'https://drive.google.com/thumbnail?id=1BcOx2thfCmCW2RvUGqFdOD2MoFBTkgRX&sz=w1000' },
+  { name: 'Goa', distance: '150 km', desc: 'Beaches and vibrant nightlife.', icon: 'beach_access', img: 'https://drive.google.com/thumbnail?id=1-EkHjghZGzqot02mlwQTMAMT0l7CGmru&sz=w1000' },
+  { name: 'Gokarna', distance: '150 km', desc: 'Peaceful coastal and temple town in Karnataka.', icon: 'waves', img: 'https://drive.google.com/thumbnail?id=1oqydjboWnPLp2h_fr2D3ko4bUBCkps7w&sz=w1000' },
+  { name: 'Hampi', distance: '190 km', desc: 'UNESCO World Heritage Site.', icon: 'account_balance', img: 'https://drive.google.com/thumbnail?id=1pxANuIfdQsEYthn2Rdfu0n2aL1onSExn&sz=w1000' },
+  { name: 'Jog Falls', distance: '190 km', desc: 'Majestic waterfalls.', icon: 'water', img: 'https://drive.google.com/thumbnail?id=1L1gh3q5Ghxn-t6boC9yYKjdw5rEKp9UN&sz=w1000' },
+  { name: 'Murudeshwar', distance: '210 km', desc: 'Murudeshwara Temple on the coast of the Arabian Sea.', icon: 'temple_hindu', img: 'https://drive.google.com/thumbnail?id=18zQZrZuy7gjLrdcu1XA6BhZF0P6X9Nqo&sz=w1000' },
+  { name: 'Udupi', distance: '240 km', desc: 'Famous Sri Krishna Temple and coastal city.', icon: 'temple_hindu', img: 'https://drive.google.com/thumbnail?id=1WcLvzY6NwQxSZ9hB1p5h4S0E9aJ5_D6Z&sz=w1000' }
+];
+
+/* Supporting team — replace `photo: null` with an image URL (e.g. a Drive thumbnail link) once you have photos.
+   Until then, cards render with a placeholder avatar. */
+const SUPPORT_TEAM = [
+  { name: 'Mr. Bharath G Relekar', title: 'Junior Technical Superintendent', photo: 'https://drive.google.com/thumbnail?id=1StiC1kc_5naStSxTSuAYFkcRI8FDRZBS&sz=w1000', photoPosition: 'center top' },
+  { name: 'Mr. Rahul Somvanshi', title: 'Junior Technician', photo: 'https://drive.google.com/thumbnail?id=1iPhvWjrv6QcqLBnXc3hewSqAoM-hdd0n&sz=w1000' },
+  { name: 'Mr. Varun Meda', title: 'Executive Assistant', photo: 'https://drive.google.com/thumbnail?id=1bJVnjeDNjtmfj64AXZuSt39fav72MgQQ&sz=w1000' }
 ];
 
 /* Leadership — replace `photo: null` with an image URL once you have actual photos.
@@ -1180,6 +1262,37 @@ function renderGallery(){
       </div>
     </div>`).join('');
 }
+function renderSupportTeam(){
+  document.getElementById('supportTeamGrid').innerHTML = SUPPORT_TEAM.map(p => `
+    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-40 h-40 rounded-full border-4 border-secondary-fixed mx-auto mb-4 overflow-hidden bg-surface-container-low flex items-center justify-center">
+        ${p.photo
+          ? `<img src="${p.photo}" alt="${p.name}" class="w-full h-full object-cover" style="object-position: ${p.photoPosition || 'center'};"/>`
+          : `<span class="material-symbols-outlined text-6xl text-outline">person</span>`
+        }
+      </div>
+      <h3 class="font-subheading text-body-lg font-bold text-primary leading-snug">${p.name}</h3>
+      <p class="font-label-caps text-label-caps text-secondary font-bold mt-1">${p.title}</p>
+    </div>`).join('');
+}
+function renderNearbyPlaces(){
+  document.getElementById('nearbyGrid').innerHTML = NEARBY_PLACES.map(p => `
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-[0_12px_24px_rgba(0,32,104,0.08)] transition-all duration-300 group flex flex-col h-full">
+      <div class="aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-primary-fixed to-surface-container-low flex items-center justify-center">
+        ${p.img
+          ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.img}" alt="${p.name}"/>`
+          : `<span class="material-symbols-outlined text-6xl text-surface-tint">${p.icon}</span>`
+        }
+      </div>
+      <div class="p-6">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <h3 class="font-subheading text-subheading text-primary">${p.name}</h3>
+          <span class="font-label-caps text-label-caps text-secondary whitespace-nowrap">${p.distance}</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant text-sm">${p.desc}</p>
+      </div>
+    </div>`).join('');
+}
 function openGalleryModal(i){
   const g = GALLERY_ITEMS[i];
   document.getElementById('galleryModalImg').src = g.img;
@@ -1424,7 +1537,9 @@ renderGallery();
 renderSponsors();
 renderSponsorMarquee();
 renderLeadership();
-const startScreens = ['home','speakers','registration','about','gallery','sponsors'];
+renderNearbyPlaces();
+renderSupportTeam();
+const startScreens = ['home','speakers','registration','about','gallery','sponsors','travel'];
 const startHash = window.location.hash.replace('#','');
 goTo(startScreens.includes(startHash) ? startHash : 'home');
 </script>
