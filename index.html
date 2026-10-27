@@ -1026,20 +1026,22 @@ const LEADERSHIP = [
 /* Sponsor tiers — replace `logo: null` with an image URL once you have actual logo files,
    e.g. logo: 'https://yourhost.com/logos/company.png'. Until then, names render as text plates. */
 const SPONSOR_TIERS = [
-  { tier: 'Platinum Sponsors', tierColor: 'text-tertiary', logoHeight: 'h-44', cols: 'grid-cols-2 sm:grid-cols-3',
+  // fitLogo: each box shrinks to wrap its logo's own aspect ratio instead of a fixed grid cell.
+  // Logo heights scale off Platinum: Gold = 75%, Silver = 50%.
+  { tier: 'Platinum Sponsors', tierColor: 'text-tertiary', logoHeight: 'h-32', cols: 'grid-cols-2 sm:grid-cols-3', fitLogo: true,
     sponsors: [
-      { name: 'Your Platinum Sponsor', logo: null }
+      { name: 'Platinum Sponsor', logo: 'https://drive.google.com/thumbnail?id=1l0WHquKrm5Xy0PnvZRM97SDSZAjarfQp&sz=w2000' }
     ] },
-  { tier: 'Gold Sponsors', tierColor: 'text-secondary', logoHeight: 'h-36', cols: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4',
+  { tier: 'Gold Sponsors', tierColor: 'text-secondary', logoHeight: 'h-24', cols: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4', fitLogo: true,
     sponsors: [
-      { name: 'Gold Sponsor 1', logo: null },
-      { name: 'Gold Sponsor 2', logo: null },
+      { name: 'COMSOL', logo: 'https://drive.google.com/thumbnail?id=1XgGfezBRvLQykubmDKVN5bUhZoAb0qcJ&sz=w2000', url: 'https://www.comsol.com/' },
+      { name: 'Benchmark', logo: 'https://drive.google.com/thumbnail?id=1kTObdPCmYrWFBfuvjSYgIzdlrFohEl_7&sz=w2000' },
       { name: 'Gold Sponsor 3', logo: null },
       { name: 'Gold Sponsor 4', logo: null }
     ] },
-  { tier: 'Silver Sponsors', tierColor: 'text-outline', logoHeight: 'h-32', cols: 'grid-cols-2 sm:grid-cols-3',
+  { tier: 'Silver Sponsors', tierColor: 'text-outline', logoHeight: 'h-16', cols: 'grid-cols-2 sm:grid-cols-3', fitLogo: true,
     sponsors: [
-      { name: 'COMSOL', logo: 'https://drive.google.com/thumbnail?id=1XgGfezBRvLQykubmDKVN5bUhZoAb0qcJ&sz=w1000', url: 'https://www.comsol.com/' },
+      { name: 'Silver Sponsor 1', logo: null },
       { name: 'Silver Sponsor 2', logo: null },
       { name: 'Silver Sponsor 3', logo: null }
     ] },
@@ -1197,6 +1199,22 @@ function renderSponsors(){
                 }
               </div>`).join('')}
           </div>`
+        : group.fitLogo
+        ? `<div class="flex flex-col items-center gap-6 max-w-4xl mx-auto">
+            <!-- Real logos share one non-wrapping row; placeholders wrap beneath it. -->
+            <div class="flex flex-nowrap items-center justify-center gap-6 max-w-full">
+              ${group.sponsors.filter(s => s.logo).map(s => `
+                <${s.url ? `a href="${s.url}" target="_blank" rel="noopener noreferrer" title="${s.name}"` : 'div'} class="bg-surface-container-lowest border border-outline-variant rounded-xl inline-flex items-center justify-center p-3 min-w-0 hover:border-primary hover:shadow-sm transition-all">
+                  <img src="${s.logo}" alt="${s.name}" class="${group.logoHeight} w-auto max-w-full object-contain"/>
+                </${s.url ? 'a' : 'div'}>`).join('')}
+            </div>
+            ${group.sponsors.some(s => !s.logo) ? `<div class="flex flex-wrap items-center justify-center gap-6">
+              ${group.sponsors.filter(s => !s.logo).map(s => `
+                <div class="bg-surface-container-lowest border border-outline-variant rounded-xl inline-flex items-center justify-center p-3">
+                  <span class="${group.logoHeight} w-40 flex items-center justify-center font-subheading text-sm text-on-surface-variant text-center">${s.name}</span>
+                </div>`).join('')}
+            </div>` : ''}
+          </div>`
         : `<div class="grid ${group.cols} gap-6 max-w-4xl mx-auto">
             ${group.sponsors.map(s => `
               <${s.url ? `a href="${s.url}" target="_blank" rel="noopener noreferrer" title="${s.name}"` : 'div'} class="bg-surface-container-lowest border border-outline-variant rounded-xl flex items-center justify-center p-3 overflow-hidden ${group.logoHeight} hover:border-primary hover:shadow-sm transition-all">
@@ -1234,7 +1252,8 @@ function renderLeadership(){
 function renderSponsorMarquee(){
   // Flatten Platinum -> Gold -> Silver only, in that order, no tier labels — just logos.
   const marqueeTiers = SPONSOR_TIERS.filter(g => g.tier !== 'Under the Patronage of');
-  const allSponsors = marqueeTiers.flatMap(g => g.sponsors);
+  // Skip placeholder entries so only real logos scroll.
+  const allSponsors = marqueeTiers.flatMap(g => g.sponsors.filter(s => s.logo));
   const plate = s => `
     <${s.url ? `a href="${s.url}" target="_blank" rel="noopener noreferrer" title="${s.name}"` : 'div'} class="flex items-center justify-center h-20 w-44 mx-4 p-2 flex-shrink-0 overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-lg">
       ${s.logo
@@ -1242,8 +1261,11 @@ function renderSponsorMarquee(){
         : `<span class="font-subheading text-xs text-on-surface-variant text-center px-2">${s.name}</span>`
       }
     </${s.url ? 'a' : 'div'}>`;
-  // Duplicate the sequence so the track can loop seamlessly at -50% translation.
-  const doubled = [...allSponsors, ...allSponsors];
+  // Repeat the Platinum -> Gold -> Silver sequence so one half is wider than the screen,
+  // then duplicate that half so the track can loop seamlessly at -50% translation.
+  const reps = allSponsors.length ? Math.ceil(8 / allSponsors.length) : 0;
+  const half = Array.from({ length: reps }, () => allSponsors).flat();
+  const doubled = [...half, ...half];
   document.getElementById('sponsorMarqueeTrack').innerHTML = doubled.map(plate).join('');
 }
 
