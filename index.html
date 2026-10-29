@@ -405,7 +405,7 @@
             <h3 class="font-subheading text-subheading text-primary">Fee Structure</h3>
           </div>
           <div class="mb-4">
-            <p class="font-body-md text-body-md text-on-surface-variant">Students (UG, PG, Ph.D.) & Faculty</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Students (UG, PG, &amp; Ph.D.), Faculty &amp; Industry People</p>
             <p class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Rs. 1000/-</p>
           </div>
           <ul class="space-y-2 font-body-md text-body-md text-on-surface-variant text-sm border-t border-outline-variant/20 pt-4">
@@ -418,6 +418,10 @@
               All-day refreshments (tea/snacks)
             </li>
           </ul>
+          <div class="flex items-start gap-2 mt-4 pt-4 border-t border-outline-variant/20 font-body-md text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-sm">hotel</span>
+            <p><span class="font-semibold text-on-surface">Accommodation:</span> Limited accommodation is available on a <span class="font-semibold">first-come, first-served</span> basis. Indicate your requirement in the registration form; the organizing team will confirm availability by email.</p>
+          </div>
         </div>
         <!-- Contact Card -->
         <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 relative overflow-hidden">
@@ -556,6 +560,26 @@
                 </label>
               </div>
               <p class="font-body-md text-xs text-outline mt-1">Max file size 5MB each. Please use the prescribed abstract template.</p>
+            </div>
+
+            <div class="space-y-3 pt-2 border-t border-outline-variant/30">
+              <div class="pt-4">
+                <h3 class="font-subheading text-subheading text-primary mb-1">Accommodation Required? *</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">Please indicate whether you need accommodation during the symposium.</p>
+              </div>
+              <div class="flex gap-6">
+                <label class="flex items-center gap-2 font-body-md text-on-surface cursor-pointer">
+                  <input type="radio" name="accommodation" value="Yes" required class="accent-primary w-4 h-4"/> Yes
+                </label>
+                <label class="flex items-center gap-2 font-body-md text-on-surface cursor-pointer">
+                  <input type="radio" name="accommodation" value="No" required class="accent-primary w-4 h-4"/> No
+                </label>
+              </div>
+              <div class="flex items-start gap-2 bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3">
+                <span class="material-symbols-outlined text-error text-base">info</span>
+                <p class="font-body-md text-xs text-on-surface-variant"><span class="font-semibold">Note:</span> Accommodation is limited and will be allotted on a <span class="font-semibold">first-come, first-served</span> basis. Selecting "Yes" does not guarantee accommodation; the organizing team will confirm availability by email.</p>
+              </div>
+              <p class="font-body-md text-xs" id="accommodationError" hidden style="color:#dc2626;">Please select whether you require accommodation.</p>
             </div>
 
             <div class="pt-6">
@@ -1401,7 +1425,7 @@ function closeMobileMenu(){
 /* ================= REGISTRATION CONFIG ================= */
 // TODO: after deploying the Apps Script (see Code.gs), paste its Web App URL here.
 const CONFIG = {
-  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzlQycEPbfaTGqXjTk5j6lfCsSZvTfxqp-EuGDdP-kyckyQ50vsiSV4fTI9_zHLFNxY/exec',
+  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxW33HMYlHy4HJg2el72aVO20yETnQuM4-DRZ9vTFkM_gaUPmLDEnBMh12Lh9HDs5vN/exec',
   AMOUNT: 1000,
   MAX_FILE_MB: 5
 };
@@ -1493,6 +1517,15 @@ async function submitRegistration(e){
     alert('Please upload your payment receipt (screenshot, image, or PDF) to complete registration.');
     return false;
   }
+  const accommodationInput = document.querySelector('input[name="accommodation"]:checked');
+  if(!accommodationInput){
+    document.getElementById('accommodationError').hidden = false;
+    document.getElementById('accommodationError').scrollIntoView({behavior:'smooth', block:'center'});
+    alert('Please select whether you require accommodation (Yes or No).');
+    return false;
+  }
+  document.getElementById('accommodationError').hidden = true;
+  const accommodation = accommodationInput.value;
   if(CONFIG.SCRIPT_URL.includes('PASTE_YOUR')){
     alert('The registration backend is not connected yet (SCRIPT_URL is not set). See the deployment instructions to connect it.');
     return false;
@@ -1507,6 +1540,7 @@ async function submitRegistration(e){
   const payload = {
     ...regData,
     transactionId,
+    accommodation,
     amount: CONFIG.AMOUNT,
     abstract: filePayload.abstract || null,
     receipt: filePayload.receipt || null
