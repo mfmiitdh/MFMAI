@@ -956,7 +956,7 @@ const SPEAKERS = [
    photo:'https://drive.google.com/thumbnail?id=1P78yWfieWu3-MYWX71RJiOAhLwi1fx6d&sz=w1000'},
   /* photo: null shows a placeholder avatar — replace with a Drive thumbnail link once available */
   {name:'Dr. Krishna Kumar Singh', institution:'BARC, Mumbai', bio:'Bhabha Atomic Research Centre, Mumbai.',
-   photo:null},
+   photo:'https://drive.google.com/thumbnail?id=1Kqh9cMvGfIl4VR-OL7pqdYjgCP56hHEm&sz=w1000', photoPosition:'center 20%', photoScale:1.2},
   {name:'Abhimanyu Singh', institution:'Ansys (part of Synopsys)', bio:'Technical Leader – Academic, Ansys (part of Synopsys).',
    photo:'https://drive.google.com/thumbnail?id=1PMm7PvkRiTcWblJcBd2xobf3bnaZAUhd&sz=w1000', photoPosition:'center 20%'}
 ];
@@ -1169,7 +1169,7 @@ function renderSpeakers(){
     <div class="bg-surface-container-lowest border border-primary/10 rounded-xl overflow-hidden hover:shadow-[0_12px_24px_rgba(0,32,104,0.04)] transition-all duration-300 group flex flex-col items-center p-8 relative">
       <div class="w-44 h-44 rounded-full border-4 border-secondary-fixed mb-6 overflow-hidden relative shadow-sm">
         ${sp.photo
-          ? `<img class="w-full h-full object-cover" style="object-position: ${sp.photoPosition || 'center'};" src="${sp.photo}" alt="${sp.name}"/>`
+          ? `<img class="w-full h-full object-cover" style="object-position: ${sp.photoPosition || 'center'};${sp.photoScale ? ` transform: scale(${sp.photoScale}); transform-origin: center 35%;` : ''}" src="${sp.photo}" alt="${sp.name}"/>`
           : `<div class="w-full h-full bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-6xl text-outline">person</span></div>`
         }
       </div>
