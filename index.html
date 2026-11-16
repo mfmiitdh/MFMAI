@@ -953,7 +953,12 @@ const SPEAKERS = [
   {name:'Prof. Sai Phani Kumar V.', institution:'IISER Bhopal', bio:'Expert in computational catalysis and computational material science.',
    photo:'https://drive.google.com/thumbnail?id=13MTpigIFktyIytCRU1XnY04RMUwcTv6-&sz=w1000'},
   {name:'Prof. Manish Kumar', institution:'IISc Bengaluru', bio:'Expert in theory, computation, complex fluids, soft matter, and dynamics of complex fluids.',
-   photo:'https://drive.google.com/thumbnail?id=1P78yWfieWu3-MYWX71RJiOAhLwi1fx6d&sz=w1000'}
+   photo:'https://drive.google.com/thumbnail?id=1P78yWfieWu3-MYWX71RJiOAhLwi1fx6d&sz=w1000'},
+  /* photo: null shows a placeholder avatar — replace with a Drive thumbnail link once available */
+  {name:'Dr. Krishna Kumar Singh', institution:'BARC, Mumbai', bio:'Bhabha Atomic Research Centre, Mumbai.',
+   photo:null},
+  {name:'Abhimanyu Singh', institution:'Ansys (part of Synopsys)', bio:'Technical Leader – Academic, Ansys (part of Synopsys).',
+   photo:'https://drive.google.com/thumbnail?id=1PMm7PvkRiTcWblJcBd2xobf3bnaZAUhd&sz=w1000', photoPosition:'center 20%'}
 ];
 
 const HERO_IMAGES = [
@@ -1163,7 +1168,10 @@ function renderSpeakers(){
   document.getElementById('speakersGrid').innerHTML = SPEAKERS.map(sp => `
     <div class="bg-surface-container-lowest border border-primary/10 rounded-xl overflow-hidden hover:shadow-[0_12px_24px_rgba(0,32,104,0.04)] transition-all duration-300 group flex flex-col items-center p-8 relative">
       <div class="w-44 h-44 rounded-full border-4 border-secondary-fixed mb-6 overflow-hidden relative shadow-sm">
-        <img class="w-full h-full object-cover" style="object-position: ${sp.photoPosition || 'center'};" src="${sp.photo}"/>
+        ${sp.photo
+          ? `<img class="w-full h-full object-cover" style="object-position: ${sp.photoPosition || 'center'};" src="${sp.photo}" alt="${sp.name}"/>`
+          : `<div class="w-full h-full bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-6xl text-outline">person</span></div>`
+        }
       </div>
       <div class="text-center w-full">
         <h3 class="font-subheading text-subheading text-primary mb-1 group-hover:text-tertiary transition-colors">${sp.name}</h3>
