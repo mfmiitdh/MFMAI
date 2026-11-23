@@ -468,7 +468,7 @@
           <!-- STEP 1: Participant Details -->
           <form id="regStep1" class="space-y-6" onsubmit="return goToPaymentStep(event)">
             <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2 border-b border-outline-variant/30 pb-4">Participant Application</h2>
-            <p class="font-body-md text-sm text-on-surface-variant -mt-4">You can register now and submit your abstract later — a poster abstract is optional.</p>
+            <p class="font-body-md text-sm text-on-surface-variant -mt-4">You can register now and submit your abstract later — an abstract is optional.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <label class="block font-label-caps text-label-caps text-on-surface-variant" for="fullName">Full Name *</label>
@@ -546,10 +546,26 @@
               <p class="font-body-md text-xs text-on-surface-variant" id="receiptError" hidden style="color:#dc2626;">Please upload your payment receipt to continue.</p>
             </div>
 
-            <div class="space-y-2 pt-2 border-t border-outline-variant/30">
-              <div class="pt-4 mb-1">
-                <h3 class="font-subheading text-subheading text-primary mb-1">Poster Abstract (optional)</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant text-sm">Not required to register — only needed if you intend to present a poster. You can also email it later.</p>
+            <div class="space-y-3 pt-2 border-t border-outline-variant/30">
+              <div class="pt-4">
+                <h3 class="font-subheading text-subheading text-primary mb-1">Are you interested in presenting your work? *</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">Select "Yes" if you would like to present a poster and submit an abstract.</p>
+              </div>
+              <div class="flex gap-6">
+                <label class="flex items-center gap-2 font-body-md text-on-surface cursor-pointer">
+                  <input type="radio" name="presentWork" value="Yes" required class="accent-primary w-4 h-4" onchange="toggleAbstractSection(true)"/> Yes
+                </label>
+                <label class="flex items-center gap-2 font-body-md text-on-surface cursor-pointer">
+                  <input type="radio" name="presentWork" value="No" required class="accent-primary w-4 h-4" onchange="toggleAbstractSection(false)"/> No
+                </label>
+              </div>
+              <p class="font-body-md text-xs" id="presentWorkError" hidden style="color:#dc2626;">Please select whether you are interested in presenting your work.</p>
+            </div>
+
+            <div class="space-y-2 hidden" id="abstractSection">
+              <div class="mb-1">
+                <h3 class="font-subheading text-subheading text-primary mb-1">Abstract (optional)</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">No need to upload an abstract if you do not have work to present.</p>
               </div>
               <div class="flex items-center justify-center w-full">
                 <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-outline-variant/50 border-dashed rounded cursor-pointer bg-surface hover:bg-surface-container-low transition-colors" for="abstractFile" id="dropzoneLabel">
@@ -1006,7 +1022,7 @@ const SUPPORT_TEAM = [
 /* Leadership — replace `photo: null` with an image URL once you have actual photos.
    Until then, names render with a placeholder avatar. */
 const LEADERSHIP = [
-  { name: 'Prof. Venkappaya R. Desai', role: 'Patron', title: 'Director, IIT Dharwad', photo: 'https://drive.google.com/thumbnail?id=1Bb0cZNJO5TlceJt0KUqto5hJ5dfZ1aLl&sz=w1000', website: 'https://www.iitdh.ac.in/director' },
+  { name: 'Prof. Venkappayya R. Desai', role: 'Patron', title: 'Director, IIT Dharwad', photo: 'https://drive.google.com/thumbnail?id=1Bb0cZNJO5TlceJt0KUqto5hJ5dfZ1aLl&sz=w1000', website: 'https://www.iitdh.ac.in/director' },
   { name: 'Prof. Somasekhara Goud Sontti', role: 'Convenor', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1J6fIkyZQi9DJugMbEMXYF8syuwOXWTl5&sz=w1000', website: 'https://mfmlab.iitdh.ac.in/' },
   { name: 'Prof. Ravi Chandra Dutta', role: 'Co-Convenor', title: 'Assistant Professor', photo: 'https://drive.google.com/thumbnail?id=1PT0vU2PzgWjKuzQo-ZafYqZqFJsyLbiS&sz=w1000', website: 'https://sites.google.com/iitdh.ac.in/ravichandard/' }
 ];
@@ -1462,6 +1478,19 @@ async function handleFileSelect(file, kind){
   }
 }
 
+function toggleAbstractSection(show){
+  document.getElementById('abstractSection').classList.toggle('hidden', !show);
+  document.getElementById('presentWorkError').hidden = true;
+  if(!show){
+    // discard any abstract already attached
+    delete filePayload.abstract;
+    document.getElementById('abstractFile').value = '';
+    document.getElementById('dropzoneInner').innerHTML = `
+      <span class="material-symbols-outlined text-outline mb-1">upload_file</span>
+      <p class="mb-1 font-body-md text-sm text-on-surface-variant"><span class="font-semibold text-primary">Click to upload</span> abstract (PDF or DOCX)</p>`;
+  }
+}
+
 /* ================= STEP NAVIGATION ================= */
 function goToPaymentStep(e){
   e.preventDefault();
@@ -1507,6 +1536,14 @@ async function submitRegistration(e){
     alert('Please upload your payment receipt (screenshot, image, or PDF) to complete registration.');
     return false;
   }
+  const presentWorkInput = document.querySelector('input[name="presentWork"]:checked');
+  if(!presentWorkInput){
+    document.getElementById('presentWorkError').hidden = false;
+    document.getElementById('presentWorkError').scrollIntoView({behavior:'smooth', block:'center'});
+    alert('Please select whether you are interested in presenting your work (Yes or No).');
+    return false;
+  }
+  const presentWork = presentWorkInput.value;
   const accommodationInput = document.querySelector('input[name="accommodation"]:checked');
   if(!accommodationInput){
     document.getElementById('accommodationError').hidden = false;
@@ -1531,8 +1568,9 @@ async function submitRegistration(e){
     ...regData,
     transactionId,
     accommodation,
+    presentWork,
     amount: CONFIG.AMOUNT,
-    abstract: filePayload.abstract || null,
+    abstract: presentWork === 'Yes' ? (filePayload.abstract || null) : null,
     receipt: filePayload.receipt || null
   };
 
