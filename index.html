@@ -245,7 +245,7 @@
 <!-- ========== FlashNewsTicker ========== -->
 <div class="bg-primary fixed top-[72px] w-full z-40 flex items-center overflow-hidden h-ticker-height cursor-pointer" onclick="goTo('registration')">
   <div class="ticker-track text-on-primary font-news-ticker text-news-ticker flex items-center">
-    <span class="font-label-caps text-label-caps text-secondary-fixed mr-2">UPDATE:</span> Abstract submission and registration deadline extended to November 25, 2026. Platinum Sponsorship slots now open!
+    <span class="font-label-caps text-label-caps text-secondary-fixed mr-2">UPDATE:</span> Registration deadline extended to November 28, 2026.
   </div>
 </div>
 
@@ -395,7 +395,7 @@
             <h3 class="font-subheading text-subheading text-primary">Important Date</h3>
           </div>
           <p class="font-body-md text-body-md text-on-surface-variant mb-2">Registration Deadline:</p>
-          <p class="font-subheading text-subheading text-on-surface font-bold text-error">November 25, 2026</p>
+          <p class="font-subheading text-subheading text-on-surface font-bold text-error">November 28, 2026</p>
         </div>
         <!-- Fee Details Card -->
         <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 relative overflow-hidden">
@@ -1039,30 +1039,33 @@ const SPONSOR_TIERS = [
       { name: 'AMETEK', logo: 'https://drive.google.com/thumbnail?id=1enaVfWYkeJkIfFPgIOlg3Xsb4NFBZ2PX&sz=w1000' }
     ] },
   // perRow: fixed number of equal-size logo boxes per row; a short last row is centred.
-  { tier: 'Platinum Sponsors', tierColor: 'text-tertiary', logoHeight: 'h-32', perRow: 3,
+  { tier: 'Platinum Sponsors', tierColor: 'text-tertiary', logoHeight: 'h-32', perRow: 4,
     sponsors: [
       { name: 'ZEISS', logo: 'https://drive.google.com/thumbnail?id=1l0WHquKrm5Xy0PnvZRM97SDSZAjarfQp&sz=w2000', url: 'https://www.zeiss.co.in/corporate/home.html' },
       { name: 'Advance Tech', logo: 'https://drive.google.com/thumbnail?id=1TtPhCRn_Opv8kIbn5F_Fi4vc0A3MpLrK&sz=w2000' },
-      { name: 'Color Vibration', logo: 'https://drive.google.com/thumbnail?id=1BnZi49w0nbjmkwkhXOHajoXc-pTtzP0q&sz=w2000' },
       { name: 'Holmarc', logo: 'https://drive.google.com/thumbnail?id=1If5K6qaSFrI9fZVhdm-je1wa1W97qzaC&sz=w2000' },
-      { name: 'Netweb', logo: 'https://drive.google.com/thumbnail?id=1SrKienF0wA02PqYGOCqZfaKt945ifs1r&sz=w2000' },
-      { name: 'Nona Technologies', logo: 'https://drive.google.com/thumbnail?id=1b-n-Qv_MfoBbetMFdP3aiS-MFYGC0yZY&sz=w2000' },
-      { name: 'Metrohm', logo: 'https://drive.google.com/thumbnail?id=13ULsnJnJNhw2qrt7TDClT9hkcVuitEB8&sz=w2000' }
+      { name: 'Metrohm', logo: 'https://drive.google.com/thumbnail?id=13ULsnJnJNhw2qrt7TDClT9hkcVuitEB8&sz=w2000' },
+      { name: 'Aimil', logo: 'https://drive.google.com/thumbnail?id=1AaM_gI1jd0rKTOpXmsGE1tZkrQFF3h5h&sz=w2000' },
+      { name: 'KC Engineers', logo: 'https://drive.google.com/thumbnail?id=1OFcgPtPu423IAkNieiOQbtgxBARwa-yi&sz=w2000' },
+      { name: 'Nona Technologies', logo: 'https://drive.google.com/thumbnail?id=1b-n-Qv_MfoBbetMFdP3aiS-MFYGC0yZY&sz=w2000' }
     ] },
-  { tier: 'Gold Sponsors', tierColor: 'text-secondary', logoHeight: 'h-24', perRow: 3,
+  { tier: 'Gold Sponsors', tierColor: 'text-secondary', logoHeight: 'h-24', perRow: 4,
     sponsors: [
       { name: 'COMSOL', logo: 'https://drive.google.com/thumbnail?id=1XgGfezBRvLQykubmDKVN5bUhZoAb0qcJ&sz=w2000', url: 'https://www.comsol.com/' },
+      { name: 'IKA', logo: 'https://drive.google.com/thumbnail?id=1aJUePhYB-27AlTZ25avScy021ZDZuTLr&sz=w2000' },
+      { name: 'Netweb', logo: 'https://drive.google.com/thumbnail?id=1SrKienF0wA02PqYGOCqZfaKt945ifs1r&sz=w2000' },
+      { name: 'Verder', logo: 'https://drive.google.com/thumbnail?id=1sCeWhr-ieUXQHBDPaNDA4siLdUEFeyBm&sz=w2000' },
+      { name: 'Inkarp', logo: 'https://drive.google.com/thumbnail?id=1yxv3Q78glanlp080Vel4ET_ZjNwrn90L&sz=w2000' },
       { name: 'Benchmark', logo: 'https://drive.google.com/thumbnail?id=1kTObdPCmYrWFBfuvjSYgIzdlrFohEl_7&sz=w2000', url: 'https://benchmarksolution.com/' },
       { name: 'CW3D', logo: 'https://drive.google.com/thumbnail?id=1BmqxFVFiFztdz_4Fyfioai71wuVC0cJl&sz=w2000' },
       { name: 'Knowteq', logo: 'https://drive.google.com/thumbnail?id=1maNtHj3_Tojkw6x7mhlkQJbrRzz2QQJ6&sz=w2000', fill: true },
+      { name: 'Color Vibration', logo: 'https://drive.google.com/thumbnail?id=1BnZi49w0nbjmkwkhXOHajoXc-pTtzP0q&sz=w2000' },
       { name: 'Skylife Solutions', logo: 'https://drive.google.com/thumbnail?id=1gQyyMKJdOVvrUJI_Npy3pU2A8dMOgtKJ&sz=w2000' }
     ] },
   { tier: 'Silver Sponsors', tierColor: 'text-outline', logoHeight: 'h-20', perRow: 4,
     sponsors: [
       { name: 'Labline', logo: 'https://drive.google.com/thumbnail?id=1Wk-1_yaMoTzbaJ6BRu8Gf1yH5aQzovKL&sz=w2000', url: 'https://www.labline.in/' },
-      { name: 'Apex', logo: 'https://drive.google.com/thumbnail?id=1HpDqHe_uphJDr4F532IsNkYakwM-HwMv&sz=w2000' },
       { name: 'Bionova Supplies', logo: 'https://drive.google.com/thumbnail?id=1CC4KBr_nNLzpcDPQSNWjQm96hyBvDwwH&sz=w2000' },
-      { name: 'KC Engineers', logo: 'https://drive.google.com/thumbnail?id=1OFcgPtPu423IAkNieiOQbtgxBARwa-yi&sz=w2000' },
       { name: 'Karmed Solutions', logo: 'https://drive.google.com/thumbnail?id=1qCQYDIlmYas6TxgcclleopGGhtq2-U2Z&sz=w2000' },
       { name: 'PSM Scientific Systems', logo: 'https://drive.google.com/thumbnail?id=1Y4qY31RnO5PjqoabLjJhV8BAqKIGUifE&sz=w2000' }
     ] }
