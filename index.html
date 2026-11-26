@@ -200,6 +200,10 @@
         0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(254, 214, 91, 0); }
         50% { transform: scale(1.06); box-shadow: 0 0 18px rgba(254, 214, 91, 0.55); }
     }
+/* flashing free-accommodation banner (registration section) */
+@keyframes accomFlash{0%,100%{background:#b8202b;color:#fff;box-shadow:0 0 0 0 rgba(184,32,43,.55)}50%{background:#1f3a6e;color:#ffd54a;box-shadow:0 0 18px 4px rgba(184,32,43,.45)}}
+.accom-flash{animation:accomFlash 1.2s ease-in-out infinite;background:#b8202b;color:#fff}
+@media (prefers-reduced-motion:reduce){.accom-flash{animation:none}}
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[120px]">
@@ -405,7 +409,7 @@
             <h3 class="font-subheading text-subheading text-primary">Fee Structure</h3>
           </div>
           <div class="mb-4">
-            <p class="font-body-md text-body-md text-on-surface-variant">Students (UG, PG, &amp; Ph.D.), Faculty &amp; Industry People</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Students (UG, PG, &amp; Ph.D.), Postdoctoral Researchers, Faculty &amp; Industry People</p>
             <p class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Rs. 1000/-</p>
           </div>
           <ul class="space-y-2 font-body-md text-body-md text-on-surface-variant text-sm border-t border-outline-variant/20 pt-4">
@@ -415,12 +419,12 @@
             </li>
             <li class="flex items-start gap-2">
               <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-              All-day refreshments (tea/snacks)
+              Lunch and tea/snacks on both days
             </li>
           </ul>
-          <div class="flex items-start gap-2 mt-4 pt-4 border-t border-outline-variant/20 font-body-md text-sm text-on-surface-variant">
-            <span class="material-symbols-outlined text-primary text-sm">hotel</span>
-            <p><span class="font-semibold text-on-surface">Accommodation:</span> Limited accommodation is available on a <span class="font-semibold">first-come, first-served</span> basis. Indicate your requirement in the registration form; the organizing team will confirm availability by email.</p>
+          <div class="accom-flash mt-4 flex flex-col items-center justify-center gap-1 rounded-lg px-4 py-4 text-center">
+            <span class="material-symbols-outlined text-3xl">hotel</span>
+            <p class="font-bold text-xl leading-snug">The accommodation for the registered participants is FREE!</p>
           </div>
         </div>
         <!-- Contact Card -->
@@ -591,9 +595,9 @@
                   <input type="radio" name="accommodation" value="No" required class="accent-primary w-4 h-4"/> No
                 </label>
               </div>
-              <div class="flex items-start gap-2 bg-surface-container-low border border-outline-variant/50 rounded px-4 py-3">
-                <span class="material-symbols-outlined text-error text-base">info</span>
-                <p class="font-body-md text-xs text-on-surface-variant"><span class="font-semibold">Note:</span> Accommodation is limited and will be allotted on a <span class="font-semibold">first-come, first-served</span> basis. Selecting "Yes" does not guarantee accommodation; the organizing team will confirm availability by email.</p>
+              <div class="accom-flash flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-center">
+                <span class="material-symbols-outlined text-2xl">hotel</span>
+                <p class="font-bold text-lg leading-snug">The accommodation for the registered participants is FREE!</p>
               </div>
               <p class="font-body-md text-xs" id="accommodationError" hidden style="color:#dc2626;">Please select whether you require accommodation.</p>
             </div>
